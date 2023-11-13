@@ -43,7 +43,7 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="CRole.h">
-      <Filter>Header Files</Filter>
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +69,7 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="CRole.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

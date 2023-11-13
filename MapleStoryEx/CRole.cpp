@@ -37,6 +37,19 @@ CRole::~CRole()
 {
 }
 
+const char* 
+CRole::get_name()
+{
+    return (const char*)(m_role_base2 + 0x4);
+}
+
+int 
+CRole::get_leval()
+{
+    //还拿不到
+    return 0;
+}
+
 short
 CRole::get_hp()
 {

@@ -15,6 +15,9 @@ private:
     virtual ~CRole();
 
 public:
+    const char* get_name();
+    int get_leval();
+
     short get_hp();
     int get_hp_max();
 

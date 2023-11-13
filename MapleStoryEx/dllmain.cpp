@@ -43,8 +43,10 @@ unsigned __stdcall start_work(LPVOID lpParam)
     DebugTest test; 
      
     CRole::pins();
-     
-    int i = CRole::pins()->get_exp();
+    
+    const char* name = CRole::pins()->get_name();
+    int i = CRole::pins()->get_leval();
+    i = CRole::pins()->get_exp();
     i = CRole::pins()->get_exp_max();
     i = CRole::pins()->get_hp();
     i = CRole::pins()->get_hp_max();
