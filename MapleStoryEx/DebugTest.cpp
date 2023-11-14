@@ -40,7 +40,7 @@ DebugTest::sub_8D850B(
     , int exp_max
     , char* pcVal)
 {
-    printf("%d/%d, %d/%d,  %d %d %s \n", current_hp, max_hp, current_mp, max_mp, exp, exp_max, pcVal);
+    //printf("%d/%d, %d/%d,  %d %d %s \n", current_hp, max_hp, current_mp, max_mp, exp, exp_max, pcVal);
     return g_sub_8D850B(this, 0, current_hp, max_hp, current_mp, max_mp, exp, exp_max, pcVal);
 }
 
@@ -48,7 +48,14 @@ int
 DebugTest::onkey(
     int wparam
     , int lparam)
-{
-    printf("%c -- %c \n", wparam, lparam);
+{ 
+    if (lparam & 0x80000000)
+    {
+        printf("%d -- key up \n", wparam);
+    }
+    else
+    {
+        printf("%d -- key down \n", wparam);
+    } 
     return g_on_key(this, 0, wparam, lparam);
 }
