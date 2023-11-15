@@ -9,6 +9,9 @@ pfun_sub_8D850B g_sub_8D850B;
 typedef int (__fastcall *pfun_onkey)(void* pthis, int dummy, int wparam, int lparam);
 pfun_onkey g_on_key;
 
+typedef void(__stdcall* pfun_send_msg)(char**, int);
+pfun_send_msg g_send_msg;
+
 DebugTest::DebugTest()
 {
     g_sub_8D850B = (pfun_sub_8D850B)0x8D850B;
@@ -28,6 +31,9 @@ DebugTest::DebugTest()
         mov fun, eax
     }
     chook(&(PVOID&)g_on_key, fun);
+
+    g_send_msg = (pfun_send_msg)0x0052C315; 
+    chook(&(PVOID&)g_send_msg, send_msg);
 }
 
 int 
@@ -56,6 +62,20 @@ DebugTest::onkey(
     else
     {
         printf("%d -- key down \n", wparam);
+        if (wparam == 88)
+        {
+            char* psz = new char[0x10];
+            strcpy(psz, "1111111");
+            g_send_msg(&psz, 0);
+            delete[] psz;
+        }
     } 
     return g_on_key(this, 0, wparam, lparam);
+}
+
+void __stdcall send_msg(char** param1, int param2)
+{ 
+    printf("send msg %s  -- %d \n", *param1, param2);
+    g_send_msg(param1, param2);
+    return;
 }
