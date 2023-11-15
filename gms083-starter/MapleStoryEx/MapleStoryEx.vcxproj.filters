@@ -45,6 +45,24 @@
     <ClInclude Include="CRole.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="include\ZXString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZAllocEx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZAllocAnonSelector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZAllocBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZAllocStrSelector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ZFatalSection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -69,6 +87,9 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="CRole.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="ZAllocEx.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

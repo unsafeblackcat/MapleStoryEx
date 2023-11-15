@@ -50,6 +50,8 @@ DebugTest::sub_8D850B(
     return g_sub_8D850B(this, 0, current_hp, max_hp, current_mp, max_mp, exp, exp_max, pcVal);
 }
 
+#include <ZXString.h>
+
 int 
 DebugTest::onkey(
     int wparam
@@ -63,11 +65,14 @@ DebugTest::onkey(
     {
         printf("%d -- key down \n", wparam);
         if (wparam == 88)
+        { 
+            ZXString<char> psz("mo fa shaung ji"); 
+            g_send_msg((char**)&psz, 0);
+        }
+        if (wparam == 65)
         {
-            char* psz = new char[0x10];
-            strcpy(psz, "1111111");
-            g_send_msg(&psz, 0);
-            delete[] psz;
+            ZXString<char> psz("mo fa dun");
+            g_send_msg((char**)&psz, 0);
         }
     } 
     return g_on_key(this, 0, wparam, lparam);
