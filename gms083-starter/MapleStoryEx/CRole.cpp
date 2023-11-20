@@ -1,6 +1,8 @@
 #include "CRole.h"
 #include <memory.h>
 
+#include "Hook.h"
+
 CRole* CRole::m_this = nullptr;
 CRole* CRole::pins()
 {
@@ -31,6 +33,8 @@ CRole::CRole()
 
     m_decode1 = (pfun_CRole_decode1)0x00416563;
     m_decode2 = (pfun_CRole_decode2)0x004746DD;
+
+
 }
 
 CRole::~CRole()
@@ -112,3 +116,11 @@ CRole::get_exp_max()
      
     return ((DWORD*)(0xBEF230))[t33 ^ t34];
 }
+
+void 
+CRole::reg_hp_mp_monitor(
+    pfun_role_hp_mp_monitor callback)
+{  
+    m_monitor_hp_mp.push_back(callback);
+    return;
+} 

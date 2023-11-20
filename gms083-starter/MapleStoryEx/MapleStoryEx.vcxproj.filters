@@ -16,9 +16,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{61d8a63a-4023-4df4-b6f7-f25dc08f0569}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Function">
-      <UniqueIdentifier>{c5088c64-35b1-4d1e-bbe5-c2106da0eff5}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -67,7 +64,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\ChatMessage.h">
-      <Filter>src\Function</Filter>
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CRoleHook.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +99,10 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="ChatMessage.cpp">
-      <Filter>src\Function</Filter>
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CRoleHook.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
