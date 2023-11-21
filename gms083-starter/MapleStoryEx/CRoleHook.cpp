@@ -2,19 +2,17 @@
 #include "CRole.h"
 #include <Hook.h>
 
-typedef int(__fastcall* pfun_role_hp_mp)(void* pthis, int dummy, int, int, int, int, int, int Unknown, char* pcVal);
-pfun_role_hp_mp g_role_hp_mp;
+typedef int(__fastcall *pfun_role_hp_mp)(void* pthis, int dummy, int, int, int, int, int, int Unknown, char* pcVal);
+pfun_role_hp_mp g_role_hp_mp = (pfun_role_hp_mp)0x8D850B;
 
 CRoleHook::CRoleHook()
-{
-    g_role_hp_mp = (pfun_role_hp_mp)0x8D850B;
-    //CPP_HOOK(g_role_hp_mp, CRoleHook::hook_role_hp_mp);
-
+{  
     void* fun = nullptr;  
     __asm {
         mov eax, CRoleHook::hook_role_hp_mp
         mov fun, eax
     }
+     
     chook(&(PVOID&)g_role_hp_mp, fun);
 }
 

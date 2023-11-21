@@ -39,10 +39,10 @@ unsigned __stdcall start_work(LPVOID lpParam)
         CPlugins p(CGlobal::pins()->get_current_dir());
         p.load();
     }
-  
-    DebugTest test; 
-     
+    
     CRole::pins();
+
+    DebugTest test;
     
     const char* name = CRole::pins()->get_name();
     int i = CRole::pins()->get_leval();
