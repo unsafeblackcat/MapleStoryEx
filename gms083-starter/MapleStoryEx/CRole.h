@@ -48,6 +48,5 @@ private:
     int m_offset;
 
 private:
-    std::vector<pfun_role_hp_mp_monitor> m_monitor_hp_mp; 
-    CRoleHook m_role_hook;
+    std::vector<pfun_role_hp_mp_monitor> m_monitor_hp_mp;
 };

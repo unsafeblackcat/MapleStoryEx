@@ -16,6 +16,9 @@
     <Filter Include="src">
       <UniqueIdentifier>{61d8a63a-4023-4df4-b6f7-f25dc08f0569}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\private">
+      <UniqueIdentifier>{b46f20d0-d9a2-4c62-b8f7-bf93f74d8062}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -63,11 +66,20 @@
     <ClInclude Include="include\ZFatalSection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\ChatMessage.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="CRoleHook.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CKeyboard.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CFunction.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CFunctionEx.h">
+      <Filter>src\private</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ChatMessage.h">
+      <Filter>src\private</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -98,11 +110,20 @@
     <ClCompile Include="ZAllocEx.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="ChatMessage.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="CRoleHook.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyboard.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CFunction.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CFunctionEx.cpp">
+      <Filter>src\private</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatMessage.cpp">
+      <Filter>src\private</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

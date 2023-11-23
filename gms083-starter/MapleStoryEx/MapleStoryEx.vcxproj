@@ -145,12 +145,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CFunction.h" />
+    <ClInclude Include="CFunctionEx.h" />
     <ClInclude Include="community.h" />
     <ClInclude Include="CPlugins.h" />
     <ClInclude Include="CRole.h" />
     <ClInclude Include="DebugTest.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="include\CGlobal.h" />
+    <ClInclude Include="include\CKeyboard.h" />
     <ClInclude Include="include\Hook.h" />
     <ClInclude Include="include\memory.h" />
     <ClInclude Include="include\ChatMessage.h" />
@@ -164,7 +167,10 @@
     <ClInclude Include="CRoleHook.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CFunction.cpp" />
+    <ClCompile Include="CFunctionEx.cpp" />
     <ClCompile Include="CGlobal.cpp" />
+    <ClCompile Include="CKeyboard.cpp" />
     <ClCompile Include="CRole.cpp" />
     <ClCompile Include="memory.cpp" />
     <ClCompile Include="DebugTest.cpp" />
