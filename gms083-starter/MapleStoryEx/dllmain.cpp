@@ -6,8 +6,7 @@
 
 #include "CGlobal.h"
 #include "CPlugins.h"
- 
-#include "DebugTest.h"
+  
 #include "CRole.h"
 #include "CKeyboard.h"
 #include "CFunction.h"
@@ -43,8 +42,7 @@ unsigned __stdcall start_work(LPVOID lpParam)
     CRole::pins();
     CFunction::pins(); 
     CKeyboard::pins();
-    CommandInput::pins();
-    CRoleHook::pins(); 
+    CommandInput::pins(); 
     CPlugins::pins()->load();
      
     CFunction::pins()->sendmsg("MapleStoryEx扩展插件启动!"); 

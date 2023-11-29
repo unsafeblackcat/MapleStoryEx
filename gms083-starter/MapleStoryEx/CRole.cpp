@@ -4,6 +4,8 @@
 #include "CMutex.h"
 #include "Hook.h"
 
+typedef int(__fastcall* pfun_role_hp_mp)(void* pthis, int dummy, int, int, int, int, int, int Unknown, char* pcVal);
+pfun_role_hp_mp g_role_hp_mp = (pfun_role_hp_mp)0x8D850B;
  
 CRole* CRole::m_this = nullptr;
 CRole* CRole::pins()
@@ -35,6 +37,14 @@ CRole::CRole()
 
     m_decode1 = (pfun_CRole_decode1)0x00416563;
     m_decode2 = (pfun_CRole_decode2)0x004746DD; 
+
+
+    void* fun = nullptr;
+    __asm {
+        mov eax, CRole::hook_role_hp_mp
+        mov fun, eax
+    } 
+    chook(&(PVOID&)g_role_hp_mp, fun);
 }
 
 CRole::~CRole()
@@ -125,3 +135,23 @@ CRole::reg_hp_mp_monitor(
     m_monitor_hp_mp.push_back(callback);
     return;
 } 
+
+int
+CRole::hook_role_hp_mp(
+    int current_hp
+    , int max_hp
+    , int current_mp
+    , int max_mp
+    , int exp
+    , int exp_max
+    , char* pcVal)
+{
+    int iret = g_role_hp_mp(this, 0, current_hp, max_hp, current_mp, max_mp, exp, exp_max, pcVal);
+
+    AutoMutex a(&CRole::pins()->m_mutex);
+    for (auto& it : CRole::pins()->m_monitor_hp_mp)
+    {
+        it(current_hp, max_hp, current_mp, max_mp);
+    }
+    return iret;
+}

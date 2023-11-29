@@ -16,11 +16,14 @@
     <Filter Include="src">
       <UniqueIdentifier>{61d8a63a-4023-4df4-b6f7-f25dc08f0569}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\private">
-      <UniqueIdentifier>{b46f20d0-d9a2-4c62-b8f7-bf93f74d8062}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\lib">
       <UniqueIdentifier>{14e7661c-6bee-49e2-8165-6a8dc2f7c510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\public">
+      <UniqueIdentifier>{1806da9c-34e0-4cfe-8fdc-227bc712b3f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\plugin">
+      <UniqueIdentifier>{a90f1ec9-1e75-4bff-ad3d-ccd2f7f246da}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,22 +36,10 @@
     <ClInclude Include="include\Hook.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="CPlugins.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="community.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\CGlobal.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="DebugTest.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="include\memory.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="CRole.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="include\ZXString.h">
@@ -69,23 +60,29 @@
     <ClInclude Include="include\ZFatalSection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CFunction.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="CFunctionEx.h">
-      <Filter>src\private</Filter>
-    </ClInclude>
-    <ClInclude Include="include\CKeyboard.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="CMutex.h">
       <Filter>src\lib</Filter>
     </ClInclude>
-    <ClInclude Include="include\CommandInput.h">
+    <ClInclude Include="CFunctionEx.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="CRoleHook.h">
-      <Filter>src\private</Filter>
+    <ClInclude Include="CGlobal.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyboard.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandInput.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CRole.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CFunction.h">
+      <Filter>src\public</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlugins.h">
+      <Filter>src\plugin</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -95,44 +92,38 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CGlobal.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlugins.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="Hook.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="DebugTest.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="memory.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="CRole.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="ZAllocEx.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="CFunction.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="CFunctionEx.cpp">
-      <Filter>src\private</Filter>
-    </ClCompile>
-    <ClCompile Include="CKeyboard.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="CMutex.cpp">
       <Filter>src\lib</Filter>
     </ClCompile>
+    <ClCompile Include="CFunctionEx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CGlobal.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyboard.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="CommandInput.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="CRoleHook.cpp">
-      <Filter>src\private</Filter>
+    <ClCompile Include="CRole.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CFunction.cpp">
+      <Filter>src\public</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlugins.cpp">
+      <Filter>src\plugin</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

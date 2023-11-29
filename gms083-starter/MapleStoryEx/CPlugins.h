@@ -3,6 +3,22 @@
 #include <string>
 #include <list>
 
+/**
+*
+*   1. 插件需要放到 plugins 目录下
+*   2. 需要实现两个接口pfun_init和pfun_show
+* 
+*   pfun_init: 负责load到内存后调用，在dllmain 之后。
+* 
+*   pfun_show: 当前插件做了什么，需要向别人显示什么。 
+*   CFunction::sendmsg 来显示告知玩家做了什么
+* 
+*   命令输入: reg_commandinput_callback 回调
+*   玩家通过聊天消息窗口发送消息，当消息以!开头则会当作插件命令处理，此时会把完整消息进入回调
+*   
+*   键盘输入: reg_keyboard_callback
+*   当产生键盘按键时触发此回调，你可以通过判断按键类型来显示你自己的程序界面？
+**/
 typedef void (__cdecl *pfun_init)();
 typedef void (__cdecl* pfun_show)();
 

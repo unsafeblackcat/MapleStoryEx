@@ -1,6 +1,5 @@
 #pragma once
-#include "community.h"
-#include "CRoleHook.h"
+#include "community.h" 
 #include "CMutex.h"
 #include <vector>
  
@@ -11,9 +10,7 @@ typedef int(__cdecl* pfun_CRole_decode2)(int, int);
 typedef void (__stdcall *pfun_role_hp_mp_monitor)(size_t hp, size_t hp_max, size_t mp, size_t mp_max);
  
 class EXPORT CRole
-{
-    friend CRoleHook;
-
+{ 
 public:
     static CRole* m_this;
     static CRole* pins();
@@ -38,6 +35,16 @@ public:
 public:
     void reg_hp_mp_monitor(pfun_role_hp_mp_monitor callback); 
  
+private:
+    //人物HP,MP当前显示 sub_8D850B
+    int hook_role_hp_mp(int current_hp
+        , int max_hp
+        , int current_mp
+        , int max_mp
+        , int exp
+        , int exp_max
+        , char* pcVal);
+
 private:
     pfun_CRole_decode1 m_decode1;
     pfun_CRole_decode2 m_decode2;

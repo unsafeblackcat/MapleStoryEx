@@ -147,17 +147,16 @@
   <ItemGroup>
     <ClInclude Include="CFunction.h" />
     <ClInclude Include="CFunctionEx.h" />
+    <ClInclude Include="CGlobal.h" />
+    <ClInclude Include="CKeyboard.h" />
     <ClInclude Include="CMutex.h" />
+    <ClInclude Include="CommandInput.h" />
     <ClInclude Include="community.h" />
     <ClInclude Include="CPlugins.h" />
     <ClInclude Include="CRole.h" />
-    <ClInclude Include="DebugTest.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="include\CGlobal.h" />
-    <ClInclude Include="include\CKeyboard.h" />
     <ClInclude Include="include\Hook.h" />
     <ClInclude Include="include\memory.h" />
-    <ClInclude Include="include\CommandInput.h" />
     <ClInclude Include="include\ZAllocAnonSelector.h" />
     <ClInclude Include="include\ZAllocBase.h" />
     <ClInclude Include="include\ZAllocEx.h" />
@@ -165,7 +164,6 @@
     <ClInclude Include="include\ZFatalSection.h" />
     <ClInclude Include="include\ZXString.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="CRoleHook.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CFunction.cpp" />
@@ -175,7 +173,6 @@
     <ClCompile Include="CMutex.cpp" />
     <ClCompile Include="CRole.cpp" />
     <ClCompile Include="memory.cpp" />
-    <ClCompile Include="DebugTest.cpp" />
     <ClCompile Include="Hook.cpp" />
     <ClCompile Include="CPlugins.cpp" />
     <ClCompile Include="dllmain.cpp" />
@@ -186,7 +183,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="CommandInput.cpp" />
-    <ClCompile Include="CRoleHook.cpp" />
     <ClCompile Include="ZAllocEx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
