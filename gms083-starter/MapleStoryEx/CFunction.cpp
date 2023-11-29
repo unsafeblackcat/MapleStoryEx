@@ -1,6 +1,5 @@
 #include "CFunction.h" 
-#include "CFunctionEx.h"
-#include "ChatMessage.h"
+#include "CFunctionEx.h" 
  
 CFunctionEx* m_fex = nullptr;
 
@@ -36,5 +35,5 @@ void
 CFunction::sendmsg(
     const char* psz)
 {
-    ChatMessage::pins()->send(psz);
+    m_fex->send_msg(psz);
 }

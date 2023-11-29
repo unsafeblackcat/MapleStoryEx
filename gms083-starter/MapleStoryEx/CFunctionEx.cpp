@@ -1,6 +1,10 @@
 #include "CFunctionEx.h"
 #include "memory.h"
+#include "ZXString.h"
 
+
+typedef void(__stdcall* pfun_send_msg)(char**, int);
+extern pfun_send_msg g_send_msg;
  
 CFunctionEx::CFunctionEx()
 {
@@ -33,5 +37,14 @@ CFunctionEx::skills(
     {
         m_skills((void*)m_skills_this, 0, lparam, 0, 0);
     } 
+    return;
+}
+
+void 
+CFunctionEx::send_msg(
+    const char* psz)
+{
+    ZXString<char> msg(psz);
+    g_send_msg((char**)&msg, 0);
     return;
 }

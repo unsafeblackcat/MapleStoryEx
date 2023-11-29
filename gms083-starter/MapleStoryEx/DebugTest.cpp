@@ -2,8 +2,7 @@
 #include "Hook.h"
 #include "memory.h"
 #include <stdio.h>
-
-#include "ChatMessage.h" 
+ 
 
 typedef int (__fastcall *pfun_onkey)(void* pthis, int dummy, int wparam, int lparam);
 pfun_onkey g_on_key = (pfun_onkey)0x00529968;

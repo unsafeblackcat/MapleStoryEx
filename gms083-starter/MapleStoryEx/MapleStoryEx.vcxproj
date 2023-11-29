@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="CFunction.h" />
     <ClInclude Include="CFunctionEx.h" />
+    <ClInclude Include="CMutex.h" />
     <ClInclude Include="community.h" />
     <ClInclude Include="CPlugins.h" />
     <ClInclude Include="CRole.h" />
@@ -156,7 +157,7 @@
     <ClInclude Include="include\CKeyboard.h" />
     <ClInclude Include="include\Hook.h" />
     <ClInclude Include="include\memory.h" />
-    <ClInclude Include="include\ChatMessage.h" />
+    <ClInclude Include="include\CommandInput.h" />
     <ClInclude Include="include\ZAllocAnonSelector.h" />
     <ClInclude Include="include\ZAllocBase.h" />
     <ClInclude Include="include\ZAllocEx.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="CFunctionEx.cpp" />
     <ClCompile Include="CGlobal.cpp" />
     <ClCompile Include="CKeyboard.cpp" />
+    <ClCompile Include="CMutex.cpp" />
     <ClCompile Include="CRole.cpp" />
     <ClCompile Include="memory.cpp" />
     <ClCompile Include="DebugTest.cpp" />
@@ -183,7 +185,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="ChatMessage.cpp" />
+    <ClCompile Include="CommandInput.cpp" />
     <ClCompile Include="CRoleHook.cpp" />
     <ClCompile Include="ZAllocEx.cpp" />
   </ItemGroup>

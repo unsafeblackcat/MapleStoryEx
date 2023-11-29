@@ -19,6 +19,9 @@
     <Filter Include="src\private">
       <UniqueIdentifier>{b46f20d0-d9a2-4c62-b8f7-bf93f74d8062}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\lib">
+      <UniqueIdentifier>{14e7661c-6bee-49e2-8165-6a8dc2f7c510}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -69,17 +72,20 @@
     <ClInclude Include="CRoleHook.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="include\CKeyboard.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="CFunction.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="CFunctionEx.h">
       <Filter>src\private</Filter>
     </ClInclude>
-    <ClInclude Include="include\ChatMessage.h">
+    <ClInclude Include="include\CommandInput.h">
       <Filter>src\private</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CKeyboard.h">
+      <Filter>src\private</Filter>
+    </ClInclude>
+    <ClInclude Include="CMutex.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,17 +119,20 @@
     <ClCompile Include="CRoleHook.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="CKeyboard.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="CFunction.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="CFunctionEx.cpp">
       <Filter>src\private</Filter>
     </ClCompile>
-    <ClCompile Include="ChatMessage.cpp">
+    <ClCompile Include="CommandInput.cpp">
       <Filter>src\private</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyboard.cpp">
+      <Filter>src\private</Filter>
+    </ClCompile>
+    <ClCompile Include="CMutex.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

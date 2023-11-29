@@ -11,6 +11,8 @@ public:
 public:
     void skills(int lparam, bool bkey = true);
 
+    void send_msg(const char* msg);
+
 private:
     pfun_skills m_skills;
     int m_skills_this;
