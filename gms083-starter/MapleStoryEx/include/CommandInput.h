@@ -19,4 +19,6 @@ public:
      
 private:
     static void msg_callback(char** psz, int wparam); 
+
+    static unsigned __stdcall dispath_thread(LPVOID lpParam);
 };

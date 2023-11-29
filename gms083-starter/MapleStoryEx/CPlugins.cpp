@@ -1,5 +1,17 @@
 #include "pch.h"
 #include "CPlugins.h"
+#include "CGlobal.h"
+
+CPlugins* CPlugins::m_this = nullptr;
+CPlugins* CPlugins::pins()
+{
+    if (m_this == nullptr)
+    {
+        m_this = new CPlugins(CGlobal::pins()->get_current_dir());
+    }
+
+    return m_this;
+}
 
 CPlugins::CPlugins(
     const std::wstring& current_dir)
@@ -91,4 +103,21 @@ CPlugins::load_ex()
     }
 
     return;
+}
+
+void 
+CPlugins::show()
+{
+    for (auto& it : m_plugins)
+    {
+        HMODULE pit = ::GetModuleHandle(it.c_str());
+        if (pit)
+        {
+            pfun_show pfun = (pfun_show)::GetProcAddress(pit, "show");
+            if (pfun)
+            {
+                pfun();
+            }
+        }
+    }
 }
