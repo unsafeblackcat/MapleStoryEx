@@ -1,7 +1,7 @@
 #pragma once
 #include "community.h"
 #include "CRoleHook.h"
-
+#include "CMutex.h"
 #include <vector>
  
 
@@ -49,4 +49,5 @@ private:
 
 private:
     std::vector<pfun_role_hp_mp_monitor> m_monitor_hp_mp;
+    CMutex m_mutex;
 };

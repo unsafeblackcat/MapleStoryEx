@@ -40,11 +40,11 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 unsigned __stdcall start_work(LPVOID lpParam)
 {
     CRole::pins();
-     
     CGlobal::pins()->init(); 
     CFunction::pins(); 
     CKeyboard::pins();
     CommandInput::pins();
+    CRoleHook::pins();
 
     {
         CPlugins p(CGlobal::pins()->get_current_dir());

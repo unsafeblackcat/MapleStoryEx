@@ -1,8 +1,10 @@
 #include "CRole.h"
 #include <memory.h>
 
+#include "CMutex.h"
 #include "Hook.h"
 
+ 
 CRole* CRole::m_this = nullptr;
 CRole* CRole::pins()
 {
@@ -32,9 +34,7 @@ CRole::CRole()
     } while (m_role_base2 == 0);
 
     m_decode1 = (pfun_CRole_decode1)0x00416563;
-    m_decode2 = (pfun_CRole_decode2)0x004746DD;
-
-
+    m_decode2 = (pfun_CRole_decode2)0x004746DD; 
 }
 
 CRole::~CRole()
@@ -121,6 +121,7 @@ void
 CRole::reg_hp_mp_monitor(
     pfun_role_hp_mp_monitor callback)
 {  
+    AutoMutex a(&m_mutex);
     m_monitor_hp_mp.push_back(callback);
     return;
 } 

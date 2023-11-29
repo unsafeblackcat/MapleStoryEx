@@ -3,6 +3,10 @@
 class CRoleHook
 {
 public:
+    static CRoleHook* m_this;
+    static CRoleHook* pins();
+
+private:
     CRoleHook();
     virtual ~CRoleHook();
 
