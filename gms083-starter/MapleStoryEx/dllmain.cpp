@@ -32,30 +32,28 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     }
     return TRUE;
 }
-
-typedef int(__fastcall* pfun_skills)(void* pthis, int dummy, int id, int param1, int param2);
-extern pfun_skills g_skills;
-extern int key;
-
+ 
 #include "memory.h"
+#include "CKeyboard.h"
+#include "CommandInput.h"
 
 unsigned __stdcall start_work(LPVOID lpParam)
 {
     CRole::pins();
-
-    CGlobal::pins()->init();
+     
+    CGlobal::pins()->init(); 
+    CFunction::pins(); 
+    CKeyboard::pins();
+    CommandInput::pins();
 
     {
         CPlugins p(CGlobal::pins()->get_current_dir());
         p.load();
     }
+    
+    CFunction::pins()->sendmsg("MapleStoryEx扩展插件启动!");
+    CFunction::pins()->sendmsg("!help 显示当前加载的插件和命令.");
      
-    CKeyboard kb;
-    CFunction::pins();
-
-    DebugTest test;
-     
-
     do 
     {
         Sleep(1000); 

@@ -78,14 +78,14 @@
     <ClInclude Include="CFunctionEx.h">
       <Filter>src\private</Filter>
     </ClInclude>
-    <ClInclude Include="include\CommandInput.h">
-      <Filter>src\private</Filter>
-    </ClInclude>
     <ClInclude Include="include\CKeyboard.h">
-      <Filter>src\private</Filter>
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="CMutex.h">
-      <Filter>Header Files</Filter>
+      <Filter>src\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CommandInput.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -125,14 +125,14 @@
     <ClCompile Include="CFunctionEx.cpp">
       <Filter>src\private</Filter>
     </ClCompile>
-    <ClCompile Include="CommandInput.cpp">
-      <Filter>src\private</Filter>
-    </ClCompile>
     <ClCompile Include="CKeyboard.cpp">
-      <Filter>src\private</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="CMutex.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandInput.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

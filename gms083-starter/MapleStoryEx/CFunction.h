@@ -1,5 +1,4 @@
 #pragma once
-
 #include "community.h"
 
 class EXPORT CFunction

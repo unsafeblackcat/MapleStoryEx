@@ -1,8 +1,10 @@
 #pragma once 
+#include "community.h"
+
 
 typedef void(__stdcall* pfun_command_input)(const char* psz);
 
-class CommandInput
+class EXPORT CommandInput
 {
 public:
     static CommandInput* m_this;

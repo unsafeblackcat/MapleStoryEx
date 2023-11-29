@@ -48,7 +48,7 @@ CommandInput::msg_callback(
     , int wparam)
 {
     ZXString<char>* psz = *(ZXString<char> **)lparam;
-    const char* psz2 = *psz;
+    const char* psz2 = (const char*)psz;
 
     if (psz2[0] == '!')
     {

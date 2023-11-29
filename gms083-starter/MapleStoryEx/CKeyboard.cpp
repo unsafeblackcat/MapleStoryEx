@@ -8,6 +8,17 @@ static CMutex g_mutex;
 
 static std::list<pfun_keyboard_callback> m_callback;
 
+CKeyboard* CKeyboard::m_this = nullptr;
+CKeyboard* CKeyboard::pins()
+{
+    if (m_this == nullptr)
+    {
+        m_this = new CKeyboard;
+    }
+
+    return m_this;
+}
+
 CKeyboard::CKeyboard()
 {
     void* fun = nullptr;
