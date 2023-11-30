@@ -96,12 +96,9 @@ CommandInput::dispath_thread(
         {
             if (it.compare("!help") == 0)
             { 
-                CFunction::pins()->sendmsg("!help 显示插件内置命令.");
-                Sleep(800);
-                CFunction::pins()->sendmsg("!show 显示所有插件介绍.");
-                Sleep(800);
+                CFunction::pins()->sendmsg("!help 显示插件内置命令."); 
+                CFunction::pins()->sendmsg("!show 显示所有插件介绍."); 
                 CFunction::pins()->sendmsg("!check 显示所有插件状态(是否正在开启).");
-                Sleep(800);
             }
             else if (it.compare("!show") == 0)
             {
@@ -112,7 +109,10 @@ CommandInput::dispath_thread(
                 AutoMutex a(&g_mutex_call_back);
                 for (auto& cb : m_callback)
                 {
-                    cb(it.c_str());
+                    if (cb(it.c_str()))
+                    {
+                        break;
+                   }
                 }
             }
         }

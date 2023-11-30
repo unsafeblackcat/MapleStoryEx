@@ -1,4 +1,4 @@
-#include "CFunction.h" 
+#include <CFunction.h>
 #include "CFunctionEx.h" 
 #include "CRole.h"
 #include "CKeyboard.h"
@@ -38,7 +38,9 @@ void
 CFunction::sendmsg(
     const char* psz)
 {
-    m_fex->send_msg(psz);
+    m_fex->send_msg(psz); 
+    //故意的，最短需要间隔800毫秒消息才会发送出去。客户端有检查，暂时懒得处理
+    Sleep(800);
 }
 
 const char* 

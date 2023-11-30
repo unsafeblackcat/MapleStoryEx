@@ -1,8 +1,8 @@
-#pragma once
-
+#pragma once 
+#include "community.h"
 #include <windows.h>
 
-class CMutex
+class EXPORT CMutex
 {
 public:
     CMutex();
@@ -16,7 +16,7 @@ private:
 };
 
 
-class AutoMutex
+class EXPORT AutoMutex
 {
 public:
     AutoMutex(CMutex* mutex);

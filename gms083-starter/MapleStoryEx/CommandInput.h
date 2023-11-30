@@ -1,5 +1,5 @@
 #pragma once 
-typedef void(__stdcall* pfun_command_input)(const char* psz);
+typedef int (__stdcall* pfun_command_input)(const char* psz);
 
 class CommandInput
 {

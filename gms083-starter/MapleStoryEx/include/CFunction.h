@@ -1,13 +1,18 @@
 #pragma once
 #include "community.h"
 
-typedef void(__stdcall* pfun_role_hp_mp_monitor)(size_t hp, size_t hp_max, size_t mp, size_t mp_max);
-typedef int(__stdcall* pfun_keyboard_callback)(int wparam, int lparam);
-typedef void(__stdcall* pfun_command_input)(const char* psz);
+typedef void (__stdcall* pfun_role_hp_mp_monitor)(size_t hp, size_t hp_max, size_t mp, size_t mp_max);
+typedef int (__stdcall* pfun_keyboard_callback)(int wparam, int lparam);
+
+//命令消息回调
+//如果返回非0值表示命令已经被处理，将不会向下继续分发
+typedef int (__stdcall* pfun_command_input)(const char* psz);
 
 
 /**
     一个接口拿能够拿到的，没必要搞那么多类
+
+    插件需要初始化哪些接口可以含 CPlugins.h 文件
 **/
 
 class EXPORT CFunction

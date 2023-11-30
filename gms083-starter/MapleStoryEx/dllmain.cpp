@@ -45,9 +45,9 @@ unsigned __stdcall start_work(LPVOID lpParam)
     CommandInput::pins(); 
     CPlugins::pins()->load();
      
-    CFunction::pins()->sendmsg("MapleStoryEx扩展插件启动!"); 
-    Sleep(800);
-    CFunction::pins()->sendmsg("!help 显示插件内置命令."); 
+    CFunction::pins()->sendmsg("~~~~~~~~MapleStoryEx扩展插件启动!~~~~~~~~");
+    CFunction::pins()->sendmsg("~~~~~~~~!help 显示可用插件的帮助命令.~~~~~~~~");
+    CFunction::pins()->sendmsg("~~~~~~~~!show 显示所有当前已加载的插件介绍和命令.~~~~~~~~");
 
     do 
     {

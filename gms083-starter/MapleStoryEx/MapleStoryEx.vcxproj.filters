@@ -60,9 +60,6 @@
     <ClInclude Include="include\ZFatalSection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CMutex.h">
-      <Filter>src\lib</Filter>
-    </ClInclude>
     <ClInclude Include="CFunctionEx.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -78,11 +75,17 @@
     <ClInclude Include="CRole.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="CFunction.h">
-      <Filter>src\public</Filter>
-    </ClInclude>
     <ClInclude Include="CPlugins.h">
       <Filter>src\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CFunction.h">
+      <Filter>src\public</Filter>
+    </ClInclude>
+    <ClInclude Include="include\community.h">
+      <Filter>src\public</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CMutex.h">
+      <Filter>src\lib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

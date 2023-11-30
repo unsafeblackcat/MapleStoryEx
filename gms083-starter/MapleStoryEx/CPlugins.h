@@ -10,8 +10,10 @@
 * 
 *   pfun_init: 负责load到内存后调用，在dllmain 之后。
 * 
-*   pfun_show: 当前插件做了什么，需要向别人显示什么。 
+*   pfun_show: 每个插件做了什么，需要向别人显示什么。 
 *   CFunction::sendmsg 来显示告知玩家做了什么
+* 
+*   pfun_check: 每个插件的状态，是否开启之类的。
 * 
 *   命令输入: reg_commandinput_callback 回调
 *   玩家通过聊天消息窗口发送消息，当消息以!开头则会当作插件命令处理，此时会把完整消息进入回调
@@ -21,6 +23,7 @@
 **/
 typedef void (__cdecl *pfun_init)();
 typedef void (__cdecl* pfun_show)();
+typedef void (__cdecl *pfun_check)();
 
 class CPlugins
 {
