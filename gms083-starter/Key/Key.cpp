@@ -1,6 +1,17 @@
 #include "Key.h" 
+
+#include <process.h>
+
 #include <community.h>
 #include <algorithm>
+
+unsigned
+__stdcall
+start_work(LPVOID lpParam)
+{
+    Key::pins()->start_workex();
+    return 0;
+}
 
 Key* Key::m_this = nullptr;
 Key* Key::pins()
@@ -14,12 +25,40 @@ Key* Key::pins()
 }
 
 Key::Key()
-{ 
+{
+    _beginthreadex(nullptr, 0, start_work, nullptr, 0, nullptr);
 }
 
 Key::~Key()
 { 
 }
+
+void 
+Key::start_workex()
+{
+    do 
+    {
+        ::Sleep(1000);
+
+        if (!m_start)
+        {
+            continue;
+        }
+        
+        { 
+            AutoMutex a(&m_mutex);
+            for (auto& it : m_auto_key)
+            {
+                ;
+            }
+        }
+
+
+    } while (true);
+
+    return;
+}
+  
 
 int 
 __stdcall 
@@ -168,4 +207,4 @@ Key::add_work_list(
     AutoMutex a(&m_mutex);
     m_auto_key.push_back(kc);
     return;
-}
+} 

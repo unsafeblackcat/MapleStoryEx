@@ -4,25 +4,29 @@
 #include <vector>
 
 #include <CMutex.h>
-
+ 
 class KeyConfig
-{
+{ 
+
 public:
     KeyConfig() {
         m_key_id = 0;
         m_time = 0;
         m_msg = "";
+        m_last_time = 0;
     };
     KeyConfig(const KeyConfig& obj) {
         m_key_id = obj.m_key_id;
         m_time = obj.m_time;
         m_msg = obj.m_msg;
+        m_last_time = obj.m_last_time;
     };
     KeyConfig& operator=(const KeyConfig& obj)
     {
         m_key_id = obj.m_key_id;
         m_time = obj.m_time;
         m_msg = obj.m_msg;
+        m_last_time = obj.m_last_time;
         return *this;
     } 
     virtual ~KeyConfig() {};
@@ -30,18 +34,24 @@ public:
     int m_key_id;
     int m_time;
     std::string m_msg;
+
+    int m_last_time;
 };
 
 class Key
 {
+    friend  unsigned __stdcall start_work(LPVOID lpParam);
+
 public:
     static Key* m_this;
     static Key* pins();
-
+      
 private:
     Key();
     virtual ~Key();
-
+     
+    void start_workex();
+      
 public:
     static int __stdcall command_input(const char* psz);
 
@@ -54,6 +64,7 @@ public:
     void init_key_config(std::vector<std::string>& cut, KeyConfig& kc);
 
 private:
+    
     void cut_key_config(const std::string& cfg, std::vector<std::string>& cut);
      
     void trigger_button(const KeyConfig& kc);
@@ -61,10 +72,10 @@ private:
     void add_config(const KeyConfig& kc);
 
     void add_work_list(const KeyConfig& kc);
-
+      
 private:
     bool m_log = false;
-
+      
     bool m_start = false;
 
     CMutex m_mutex;

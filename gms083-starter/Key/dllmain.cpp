@@ -23,7 +23,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 }
 
 CEXPORT void __cdecl init()
-{ 
+{
+    Key::pins();
     CFunction::pins()->reg_commandinput_callback(Key::command_input);
     return;
 }
