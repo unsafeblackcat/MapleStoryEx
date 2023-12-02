@@ -2,7 +2,7 @@
 该项目为gms083客户端项目，配套服务端HeavenMS-Nap的2.5.x分支  
 服务端项目地址：https://gitee.com/sleepnap/heaven-ms-nap/tree/2.5.x  
 客户端项目地址：https://gitee.com/sleepnap/gms083-src  
-客户端原文件下载地址：https://pan.baidu.com/s/19JAkftDBRedvy6CShnPnag 提取码：qppe
+客户端原文件下载地址：(原版083cn)https://pan.baidu.com/s/17z3pBKu3jz5AOJmB9eFzqQ 提取码：f5zc
 
 # 目录介绍
 - gms083-starter 客户端启动器相关
