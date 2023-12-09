@@ -6,7 +6,7 @@
 /**
 *
 *   1. 插件需要放到 plugins 目录下
-*   2. 需要实现两个接口pfun_init和pfun_show
+*   2. 需要实现三个接口pfun_init，pfun_show和pfun_reload_play_name
 * 
 *   pfun_init: 负责load到内存后调用，在dllmain 之后。
 * 
@@ -23,12 +23,23 @@
 **/
 
 /**
+*   pfun_init:      加载插件并初始化
 *   current_dir:    插件所在目录
 *   play_role_name: 玩家所选择的人物名字
 **/
 typedef void (__cdecl *pfun_init)(const char* current_dir, const char* play_role_name);
+/**
+*   pfun_show: 显示插件名字
+**/
 typedef void (__cdecl* pfun_show)();
+/**
+*   pfun_check: 检查插件状态
+**/
 typedef void (__cdecl *pfun_check)();
+/**
+*   pfun_reload_play_name: 当玩家重新选择角色时会触发此回调
+*   play_role_name: 新登陆玩家角色名字
+**/
 typedef void (__cdecl* pfun_reload_play_name)(const char* play_role_name);
 
 class CPlugins
