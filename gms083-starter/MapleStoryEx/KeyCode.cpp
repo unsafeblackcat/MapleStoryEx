@@ -74,12 +74,12 @@ KeyCode::KeyCode()
     INSERT(229, 0x0029);
 
     //特殊按键
-    INSERT(45, 0x152);
-    INSERT(36, 0x147);
-    INSERT(33, 0x149);
-    INSERT(46, 0x153);
-    INSERT(35, 0x14F);
-    INSERT(34, 0x151);
+    INSERT(45, 0x52);
+    INSERT(36, 0x47);
+    INSERT(33, 0x49);
+    INSERT(46, 0x53);
+    INSERT(35, 0x4F);
+    INSERT(34, 0x51);
 }
 
 KeyCode::~KeyCode()
