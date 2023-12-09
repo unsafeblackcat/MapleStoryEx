@@ -90,6 +90,9 @@
     <ClInclude Include="include\CIni.h">
       <Filter>src\lib</Filter>
     </ClInclude>
+    <ClInclude Include="KeyCode.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -133,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="CIni.cpp">
       <Filter>src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyCode.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

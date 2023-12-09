@@ -15,6 +15,9 @@ typedef int (__stdcall* pfun_command_input)(const char* psz);
     插件需要初始化哪些接口可以含 CPlugins.h 文件
 **/
 
+
+#define KEY_CODE(KEY) CFunction::pins()->get_key_code(KEY);
+
 class EXPORT CFunction
 {
 public:
@@ -55,6 +58,9 @@ public://人物信息相关
     int role_get_exp();
 
     int role_get_exp_max();
+
+public:
+    int get_key_code(int key);
 
 public:  //注册回调
     //人物受伤HP MP EXP 变化时会触发此回调

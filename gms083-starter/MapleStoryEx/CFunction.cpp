@@ -3,6 +3,7 @@
 #include "CRole.h"
 #include "CKeyboard.h"
 #include "CommandInput.h" 
+#include "KeyCode.h"
 
 CFunctionEx* m_fex = nullptr;
 
@@ -83,6 +84,12 @@ int
 CFunction::role_get_exp_max()
 {
     return CRole::pins()->get_exp_max();
+}
+
+int 
+CFunction::get_key_code(int key)
+{
+    return KeyCode::pins()->get(key);
 }
 
 void 

@@ -165,6 +165,7 @@
     <ClInclude Include="include\ZAllocStrSelector.h" />
     <ClInclude Include="include\ZFatalSection.h" />
     <ClInclude Include="include\ZXString.h" />
+    <ClInclude Include="KeyCode.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +176,7 @@
     <ClCompile Include="CKeyboard.cpp" />
     <ClCompile Include="CMutex.cpp" />
     <ClCompile Include="CRole.cpp" />
+    <ClCompile Include="KeyCode.cpp" />
     <ClCompile Include="memory.cpp" />
     <ClCompile Include="Hook.cpp" />
     <ClCompile Include="CPlugins.cpp" />
