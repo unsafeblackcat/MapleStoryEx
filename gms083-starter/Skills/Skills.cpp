@@ -96,7 +96,7 @@ Skills::read_ini()
 
         KeyConfig kc;
 
-        ini.read_int(node, "Skills", kc.m_key_id);
+        ini.read_int(node, "key", kc.m_key_id);
         ini.read_int(node, "time", kc.m_time);
         ini.read_string(node, "msg", kc.m_msg);
 
@@ -119,13 +119,13 @@ Skills::command_input(
     std::string command(psz);
     std::transform(command.begin(), command.end(), command.begin(), ::tolower);
       
-    std::string Skills_log_start("!Skills.log.start");
-    std::string Skills_log_stop("!Skills.log.stop");
-    std::string Skills_auto_start("!Skills.auto.start");
-    std::string Skills_auto_stop("!Skills.auto.stop");
-    std::string Skills_auto_show("!Skills.auto.show");
-    std::string Skills_auto_delete("!Skills.auto.delete:");
-    std::string Skills_auto("!Skills.auto:");
+    std::string Skills_log_start("!skills.log.start");
+    std::string Skills_log_stop("!skills.log.stop");
+    std::string Skills_auto_start("!skills.auto.start");
+    std::string Skills_auto_stop("!skills.auto.stop");
+    std::string Skills_auto_show("!skills.auto.show");
+    std::string Skills_auto_delete("!skills.auto.delete:");
+    std::string Skills_auto("!skills.auto:");
 
     if (IS_COMMAND(Skills_log_start))
     {
@@ -301,7 +301,7 @@ Skills::add_config(
     char node[256] = { 0x0 };
     sprintf(node, "%d", count);
 
-    ini.write_int(node, "Skills", kc.m_key_id);
+    ini.write_int(node, "key", kc.m_key_id);
     ini.write_int(node, "time", kc.m_time);
     ini.write_string(node, "msg", kc.m_msg.c_str()); 
     return; 
