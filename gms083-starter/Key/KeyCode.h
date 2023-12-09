@@ -2,6 +2,8 @@
 
 #include <map>
 
+#define KEY_CODE(KEY) KeyCode::pins()->get(KEY);
+
 class KeyCode
 {
 public:

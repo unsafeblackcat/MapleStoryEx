@@ -51,13 +51,23 @@ private:
     virtual ~Key();
      
     void start_workex();
-      
+       
 public:
+    inline void set_dir(const char* path) { m_current_dir = path; };
+
+    inline void set_play_role_name(const char* role) { m_play_role_name = role; }
+
+    void read_ini();
+
     static int __stdcall command_input(const char* psz);
 
     inline void set_log(bool status) { m_log = status; }
 
     inline void work(bool status) { m_start = status; }
+
+    void auto_show();
+
+    void auto_delete(const std::string& cfg);
 
     void auto_config(const std::string& cfg);
 
@@ -66,14 +76,17 @@ public:
 private:
     
     void cut_key_config(const std::string& cfg, std::vector<std::string>& cut);
-     
-    void trigger_button(const KeyConfig& kc);
-
+      
     void add_config(const KeyConfig& kc);
+     
+    void trigger_button(KeyConfig& kc);
 
     void add_work_list(const KeyConfig& kc);
       
 private:
+    std::string m_current_dir;
+    std::string m_play_role_name;
+
     bool m_log = false;
       
     bool m_start = false;
