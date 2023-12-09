@@ -2,6 +2,8 @@
 #include "CPlugins.h"
 #include "CGlobal.h"
 
+#include <codecvt>
+
 CPlugins* CPlugins::m_this = nullptr;
 CPlugins* CPlugins::pins()
 {
@@ -89,6 +91,11 @@ CPlugins::enum_plugins()
 void 
 CPlugins::load_ex()
 {
+    std::string current_dir;
+
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    current_dir = converter.to_bytes(m_plugins_dir);
+
     for (auto& it : m_plugins)
     {
         HMODULE pit = ::LoadLibraryW(it.c_str());
@@ -97,7 +104,7 @@ CPlugins::load_ex()
             pfun_init pfun = (pfun_init)::GetProcAddress(pit, "init");
             if (pfun)
             {
-                pfun();
+                pfun(current_dir.c_str());
             }
         }
     }

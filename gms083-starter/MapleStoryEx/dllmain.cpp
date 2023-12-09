@@ -54,4 +54,4 @@ unsigned __stdcall start_work(LPVOID lpParam)
         Sleep(1000); 
     } while (true);
     return 0;
-}
+} 

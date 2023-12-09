@@ -51,7 +51,7 @@ CKeyboard::onkey(
     int wparam
     , int lparam)
 {
-    printf("%d -- %X \n", wparam, lparam);
+    printf("%d -- %08X \n", wparam, lparam);
 
     {
         AutoMutex a(&g_mutex);

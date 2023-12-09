@@ -87,6 +87,9 @@
     <ClInclude Include="include\CMutex.h">
       <Filter>src\lib</Filter>
     </ClInclude>
+    <ClInclude Include="include\CIni.h">
+      <Filter>src\lib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -127,6 +130,9 @@
     </ClCompile>
     <ClCompile Include="CPlugins.cpp">
       <Filter>src\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="CIni.cpp">
+      <Filter>src\lib</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

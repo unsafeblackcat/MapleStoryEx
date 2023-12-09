@@ -21,7 +21,7 @@
 *   键盘输入: reg_keyboard_callback
 *   当产生键盘按键时触发此回调，你可以通过判断按键类型来显示你自己的程序界面？
 **/
-typedef void (__cdecl *pfun_init)();
+typedef void (__cdecl *pfun_init)(const char* current_dir);
 typedef void (__cdecl* pfun_show)();
 typedef void (__cdecl *pfun_check)();
 

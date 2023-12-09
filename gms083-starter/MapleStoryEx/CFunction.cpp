@@ -29,9 +29,9 @@ CFunction::~CFunction()
 void 
 CFunction::skills(
     int id
-    , bool bkey)
+    , bool bskill)
 { 
-    return m_fex->skills(id, bkey);
+    return m_fex->skills(id, bskill);
 }
 
 void 

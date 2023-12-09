@@ -154,6 +154,7 @@
     <ClInclude Include="CRole.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="include\CFunction.h" />
+    <ClInclude Include="include\CIni.h" />
     <ClInclude Include="include\CMutex.h" />
     <ClInclude Include="include\community.h" />
     <ClInclude Include="include\Hook.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="CFunction.cpp" />
     <ClCompile Include="CFunctionEx.cpp" />
     <ClCompile Include="CGlobal.cpp" />
+    <ClCompile Include="CIni.cpp" />
     <ClCompile Include="CKeyboard.cpp" />
     <ClCompile Include="CMutex.cpp" />
     <ClCompile Include="CRole.cpp" />

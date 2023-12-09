@@ -31,10 +31,10 @@ public:
 
         lparam: 技能ID/按键ID
         
-        bkey:true:   lparam为按键ID
-             false:  lparam为技能ID
+        bskill:true:  lparam为技能ID
+              false:  lparam为按键ID
     **/
-    void skills(int lparam, bool bkey = true);
+    void skills(int lparam, bool bskill = true);
      
     /**
         发送聊天消息
