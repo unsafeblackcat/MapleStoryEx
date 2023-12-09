@@ -21,9 +21,15 @@
 *   键盘输入: reg_keyboard_callback
 *   当产生键盘按键时触发此回调，你可以通过判断按键类型来显示你自己的程序界面？
 **/
-typedef void (__cdecl *pfun_init)(const char* current_dir);
+
+/**
+*   current_dir:    插件所在目录
+*   play_role_name: 玩家所选择的人物名字
+**/
+typedef void (__cdecl *pfun_init)(const char* current_dir, const char* play_role_name);
 typedef void (__cdecl* pfun_show)();
 typedef void (__cdecl *pfun_check)();
+typedef void (__cdecl* pfun_reload_play_name)(const char* play_role_name);
 
 class CPlugins
 {
@@ -39,6 +45,8 @@ public:
     void load();
 
     void show();
+
+    void replay_role();
 
 private:
     void enum_plugins();

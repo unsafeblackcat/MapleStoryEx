@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CPlugins.h"
 #include "CGlobal.h"
+#include "CFunction.h"
 
 #include <codecvt>
 
@@ -104,7 +105,7 @@ CPlugins::load_ex()
             pfun_init pfun = (pfun_init)::GetProcAddress(pit, "init");
             if (pfun)
             {
-                pfun(current_dir.c_str());
+                pfun(current_dir.c_str(), CFunction::pins()->role_name());
             }
         }
     }
@@ -127,4 +128,23 @@ CPlugins::show()
             }
         }
     }
+}
+
+void 
+CPlugins::replay_role()
+{
+    for (auto& it : m_plugins)
+    {
+        HMODULE pit = ::GetModuleHandle(it.c_str());
+        if (pit)
+        {
+            pfun_reload_play_name pfun = (pfun_reload_play_name)::GetProcAddress(pit, "reload_play_name");
+            if (pfun)
+            {
+                pfun(CFunction::pins()->role_name());
+            }
+        }
+    }
+
+    return;
 }

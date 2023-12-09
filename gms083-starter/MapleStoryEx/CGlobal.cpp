@@ -27,7 +27,7 @@ CGlobal::~CGlobal()
 void 
 CGlobal::init()
 {
-    init_console();
+    //init_console();
     init_path(); 
 }
 
