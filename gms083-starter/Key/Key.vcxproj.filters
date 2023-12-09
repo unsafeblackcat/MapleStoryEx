@@ -24,9 +24,6 @@
     <ClInclude Include="Key.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="KeyCode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -36,9 +33,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Key.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KeyCode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

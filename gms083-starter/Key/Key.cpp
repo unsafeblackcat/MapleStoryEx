@@ -8,10 +8,7 @@
 
 #include <CFunction.h>
 #include <CIni.h>
-
-#include "KeyCode.h"
-
-
+  
 unsigned
 __stdcall
 start_work(LPVOID lpParam)
