@@ -33,20 +33,21 @@ CEXPORT void __cdecl init(const char* current_dir, const char* play_role_name)
 
 CEXPORT void __cdecl show()
 {
-    CFunction::pins()->sendmsg("自动按键"); 
-    CFunction::pins()->sendmsg("!key.auto.start:            开启自动按键");
-    CFunction::pins()->sendmsg("!key.auto.stop:             停止自动按键");
-    CFunction::pins()->sendmsg("!key.auto:                  配置自动按键");
+    CFunction::pins()->sendmsg("定时技能释放"); 
+    CFunction::pins()->sendmsg("!key.auto.start:            开启定时自动技能释放");
+    CFunction::pins()->sendmsg("!key.auto.stop:             停止定时自动技能释放");
+    CFunction::pins()->sendmsg("!key.auto:                  配置自动技能释放");
     CFunction::pins()->sendmsg("!key.auto.show:             显示自动技能配置");
-    CFunction::pins()->sendmsg("!key.auto.delete [index]:   删除指定索引配置");
-    CFunction::pins()->sendmsg("-----------------------------------------------------");
-    CFunction::pins()->sendmsg("!key.auto 按键,秒数,\"可选项的消息\"");
-    CFunction::pins()->sendmsg("    按键: 键盘上的某个按键.");
-    CFunction::pins()->sendmsg("    秒数: 需要多少秒自动触发一次按键.");
-    CFunction::pins()->sendmsg("    可选项的消息: 当自动触发按键时可以选择向世界发送一条消息.");
+    CFunction::pins()->sendmsg("!key.auto.delete:[index]:   删除指定索引配置");
+    CFunction::pins()->sendmsg(" ");
+    CFunction::pins()->sendmsg("!key.auto:按键,秒数,\"可选项的消息\"");
+    CFunction::pins()->sendmsg("    按键: 需要自动释放技能的键盘按键.");
+    CFunction::pins()->sendmsg("    秒数: 需要多少秒自动触发一次技能释放.");
+    CFunction::pins()->sendmsg("    可选项的消息: 当自动触发技能时可以选择向世界发送一条消息.");
     CFunction::pins()->sendmsg("例子: !key.auto:a,120,魔法盾"); 
-    CFunction::pins()->sendmsg("设置自动按键，每120秒触发一次按键a，并且向世界发送消息 \"魔法盾\"");
-    CFunction::pins()->sendmsg("备注: 请使用英文输入法状态下的 逗号, 冒号"); 
+    CFunction::pins()->sendmsg("设置自动释放技能，每120秒触发一次按键a上面的技能，并且向世界发送消息 \"魔法盾\"");
+    CFunction::pins()->sendmsg("备注: 请使用英文输入法状态下的 逗号, 冒号");
+    CFunction::pins()->sendmsg("特殊按键以对应的数字ID替换字符");
     CFunction::pins()->sendmsg("特殊按键: F1~F12 使用数字ID(112~123)");
     CFunction::pins()->sendmsg("特殊按键: ~      使用数字ID 192");
     CFunction::pins()->sendmsg("特殊按键: ATL    使用数字ID 18");
