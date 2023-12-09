@@ -50,16 +50,16 @@ Skills插件依赖MapleStoryEx.dll。使用请参考MapleStoryEx::CPlugins.h文�
 聊天消息窗口输入命令:
 ~~~cpp
 /**
-!key.auto.start:            开启定时自动技能释放
-!key.auto.stop:             停止定时自动技能释放
-!key.auto:                  配置自动技能释放
-!key.auto.show:             显示自动技能配置
-!key.auto.delete:[index]:   删除指定索引配置
-!key.auto:按键,秒数,[可选项的消息]
+!skills.auto.start:            开启定时自动技能释放
+!skills.auto.stop:             停止定时自动技能释放
+!skills.auto:                  配置自动技能释放
+!skills.auto.show:             显示自动技能配置
+!skills.auto.delete:[index]:   删除指定索引配置
+!skills.auto:按键,秒数,[可选项的消息]
     按键: 需要自动释放技能的键盘按键.
     秒数: 需要多少秒自动触发一次技能释放.
     可选项的消息: 当自动触发技能时可以选择向世界发送一条消息.
-例子: !key.auto:a,120,魔法盾
+例子: !skills.auto:a,120,魔法盾
 设置自动释放技能，每120秒触发一次按键a上面的技能，并且向世界发送消息 \"魔法盾\"
 备注: 请使用英文输入法状态下的 逗号, 冒号
 特殊按键以对应的数字ID替换字符
