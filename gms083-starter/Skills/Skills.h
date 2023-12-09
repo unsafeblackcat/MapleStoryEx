@@ -38,17 +38,17 @@ public:
     int m_last_time;
 };
 
-class Key
+class Skills
 {
     friend  unsigned __stdcall start_work(LPVOID lpParam);
 
 public:
-    static Key* m_this;
-    static Key* pins();
+    static Skills* m_this;
+    static Skills* pins();
       
 private:
-    Key();
-    virtual ~Key();
+    Skills();
+    virtual ~Skills();
      
     void start_workex();
        
@@ -71,11 +71,11 @@ public:
 
     void auto_config(const std::string& cfg);
 
-    void init_key_config(std::vector<std::string>& cut, KeyConfig& kc);
+    void init_skills_config(std::vector<std::string>& cut, KeyConfig& kc);
 
 private:
     
-    void cut_key_config(const std::string& cfg, std::vector<std::string>& cut);
+    void cut_skills_config(const std::string& cfg, std::vector<std::string>& cut);
       
     void add_config(const KeyConfig& kc);
      

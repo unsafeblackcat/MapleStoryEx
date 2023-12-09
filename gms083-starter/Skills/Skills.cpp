@@ -1,4 +1,4 @@
-#include "Key.h" 
+#include "Skills.h" 
 
 #include <process.h>
 #include <time.h>
@@ -13,32 +13,32 @@ unsigned
 __stdcall
 start_work(LPVOID lpParam)
 { 
-    Key::pins()->start_workex();
+    Skills::pins()->start_workex();
     return 0;
 }
 
-Key* Key::m_this = nullptr;
-Key* Key::pins()
+Skills* Skills::m_this = nullptr;
+Skills* Skills::pins()
 {
     if (m_this == nullptr)
     {
-        m_this = new Key;
+        m_this = new Skills;
     }
 
     return m_this;
 }
 
-Key::Key()
+Skills::Skills()
 { 
     _beginthreadex(nullptr, 0, start_work, nullptr, 0, nullptr);
 }
 
-Key::~Key()
+Skills::~Skills()
 { 
 }
  
 void 
-Key::start_workex()
+Skills::start_workex()
 {
     do 
     {
@@ -64,7 +64,7 @@ Key::start_workex()
 }
 
 void
-Key::read_ini()
+Skills::read_ini()
 { 
     { 
         AutoMutex a(&m_mutex);
@@ -75,9 +75,9 @@ Key::read_ini()
         } 
     }
      
-    std::string keyini;
-    keyini = m_current_dir + m_play_role_name + "_key.ini";
-    CIni ini(keyini.c_str());
+    std::string Skillsini;
+    Skillsini = m_current_dir + m_play_role_name + "_Skills.ini";
+    CIni ini(Skillsini.c_str());
 
     int count = 0;
     ini.read_int("main", "count", count);
@@ -96,7 +96,7 @@ Key::read_ini()
 
         KeyConfig kc;
 
-        ini.read_int(node, "key", kc.m_key_id);
+        ini.read_int(node, "Skills", kc.m_key_id);
         ini.read_int(node, "time", kc.m_time);
         ini.read_string(node, "msg", kc.m_msg);
 
@@ -109,7 +109,7 @@ Key::read_ini()
   
 int 
 __stdcall 
-Key::command_input(
+Skills::command_input(
     const char* psz)
 {
 #define IS_COMMAND(cm) (command.compare(0, cm.length(), cm) == 0)
@@ -119,43 +119,43 @@ Key::command_input(
     std::string command(psz);
     std::transform(command.begin(), command.end(), command.begin(), ::tolower);
       
-    std::string Key_log_start("!key.log.start");
-    std::string Key_log_stop("!key.log.stop");
-    std::string Key_auto_start("!key.auto.start");
-    std::string Key_auto_stop("!key.auto.stop");
-    std::string key_auto_show("!key.auto.show");
-    std::string key_auto_delete("!key.auto.delete:");
-    std::string Key_auto("!key.auto:");
+    std::string Skills_log_start("!Skills.log.start");
+    std::string Skills_log_stop("!Skills.log.stop");
+    std::string Skills_auto_start("!Skills.auto.start");
+    std::string Skills_auto_stop("!Skills.auto.stop");
+    std::string Skills_auto_show("!Skills.auto.show");
+    std::string Skills_auto_delete("!Skills.auto.delete:");
+    std::string Skills_auto("!Skills.auto:");
 
-    if (IS_COMMAND(Key_log_start))
+    if (IS_COMMAND(Skills_log_start))
     {
-        Key::pins()->set_log(true);
+        Skills::pins()->set_log(true);
     }
-    else if (IS_COMMAND(Key_log_stop))
+    else if (IS_COMMAND(Skills_log_stop))
     {
-        Key::pins()->set_log(false);
+        Skills::pins()->set_log(false);
     }
-    else if (IS_COMMAND(Key_auto_start))
+    else if (IS_COMMAND(Skills_auto_start))
     {
-        Key::pins()->work(true);
+        Skills::pins()->work(true);
     }
-    else if (IS_COMMAND(Key_auto_stop))
+    else if (IS_COMMAND(Skills_auto_stop))
     {
-        Key::pins()->work(false);
+        Skills::pins()->work(false);
     }
-    else if (IS_COMMAND(key_auto_show))
+    else if (IS_COMMAND(Skills_auto_show))
     {
-        Key::pins()->auto_show();
+        Skills::pins()->auto_show();
     }
-    else if (IS_COMMAND(key_auto_delete))
+    else if (IS_COMMAND(Skills_auto_delete))
     {
-        command.replace(0, key_auto_delete.length(), "");
-        Key::pins()->auto_delete(command);
+        command.replace(0, Skills_auto_delete.length(), "");
+        Skills::pins()->auto_delete(command);
     }
-    else if (IS_COMMAND(Key_auto))
+    else if (IS_COMMAND(Skills_auto))
     {
-        command.replace(0, Key_auto.length(), "");
-        Key::pins()->auto_config(command);
+        command.replace(0, Skills_auto.length(), "");
+        Skills::pins()->auto_config(command);
     }
     else
     {
@@ -166,7 +166,7 @@ Key::command_input(
 }
 
 void 
-Key::auto_show()
+Skills::auto_show()
 {
     AutoMutex a(&m_mutex);
 
@@ -174,13 +174,13 @@ Key::auto_show()
     for (auto& it : m_auto_key)
     {
         char msg[1024] = { 0x0 };
-        sprintf(msg, "index=%d: key=%C,time=%d,msg=%s", i, it.m_key_id, it.m_time, it.m_msg.c_str());
+        sprintf(msg, "index=%d: Skills=%C,time=%d,msg=%s", i, it.m_key_id, it.m_time, it.m_msg.c_str());
         CFunction::pins()->sendmsg(msg);
     }
 }
 
 void 
-Key::auto_delete(
+Skills::auto_delete(
     const std::string& cfg)
 {
     AutoMutex a(&m_mutex);
@@ -193,9 +193,9 @@ Key::auto_delete(
     {
         if (i == index)
         {
-            std::string keyini;
-            keyini = m_current_dir + m_play_role_name + "_key.ini";
-            CIni ini(keyini.c_str());
+            std::string Skillsini;
+            Skillsini = m_current_dir + m_play_role_name + "_Skills.ini";
+            CIni ini(Skillsini.c_str());
 
             char node[256] = { 0x0 };
             sprintf(node, "%d", i); 
@@ -209,18 +209,18 @@ Key::auto_delete(
 }
 
 void 
-Key::auto_config(
+Skills::auto_config(
     const std::string& cfg)
 {
     std::vector<std::string> cut_command;
-    cut_key_config(cfg, cut_command);
+    cut_skills_config(cfg, cut_command);
     if (cut_command.empty())
     {
         return;
     }
      
     KeyConfig kc;
-    init_key_config(cut_command, kc);
+    init_skills_config(cut_command, kc);
       
     add_config(kc);
       
@@ -229,7 +229,7 @@ Key::auto_config(
 }
 
 void 
-Key::cut_key_config(
+Skills::cut_skills_config(
     const std::string& cfg
     , std::vector<std::string>& cut)
 {
@@ -259,7 +259,7 @@ Key::cut_key_config(
 }
 
 void 
-Key::init_key_config(
+Skills::init_skills_config(
     std::vector<std::string>& cut
     , KeyConfig& kc)
 {
@@ -285,12 +285,12 @@ Key::init_key_config(
 } 
 
 void 
-Key::add_config(
+Skills::add_config(
     const KeyConfig& kc)
 {
-    std::string keyini;
-    keyini = m_current_dir + m_play_role_name + "_key.ini";
-    CIni ini(keyini.c_str());
+    std::string Skillsini;
+    Skillsini = m_current_dir + m_play_role_name + "_Skills.ini";
+    CIni ini(Skillsini.c_str());
      
     int count = 0;
     ini.read_int("main", "count", count);
@@ -301,14 +301,14 @@ Key::add_config(
     char node[256] = { 0x0 };
     sprintf(node, "%d", count);
 
-    ini.write_int(node, "key", kc.m_key_id);
+    ini.write_int(node, "Skills", kc.m_key_id);
     ini.write_int(node, "time", kc.m_time);
     ini.write_string(node, "msg", kc.m_msg.c_str()); 
     return; 
 }
 
 void
-Key::trigger_button(
+Skills::trigger_button(
     KeyConfig& kc)
 {  
     DWORD current_tick = time(nullptr);
@@ -331,7 +331,7 @@ Key::trigger_button(
 }
 
 void 
-Key::add_work_list(
+Skills::add_work_list(
     const KeyConfig& kc)
 {
     bool bfind = true;

@@ -2,7 +2,7 @@
 #include "pch.h"
 #include <community.h>
 #include <CFunction.h>
-#include "key.h"
+#include "Skills.h"
 
 #include <stdio.h>
 
@@ -24,10 +24,10 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 
 CEXPORT void __cdecl init(const char* current_dir, const char* play_role_name)
 {
-    Key::pins()->set_dir(current_dir);
-    Key::pins()->set_play_role_name(play_role_name);
-    Key::pins()->read_ini();
-    CFunction::pins()->reg_commandinput_callback(Key::command_input);
+    Skills::pins()->set_dir(current_dir);
+    Skills::pins()->set_play_role_name(play_role_name);
+    Skills::pins()->read_ini();
+    CFunction::pins()->reg_commandinput_callback(Skills::command_input);
     return;
 }
 
@@ -70,7 +70,7 @@ CEXPORT void __cdecl check()
 CEXPORT void __cdecl reload_play_name(
     const char* play_role_name)
 {
-    Key::pins()->set_play_role_name(play_role_name);
-    Key::pins()->read_ini();
+    Skills::pins()->set_play_role_name(play_role_name);
+    Skills::pins()->read_ini();
     return;
 }
