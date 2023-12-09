@@ -78,7 +78,7 @@ private:
     void cut_skills_config(const std::string& cfg, std::vector<std::string>& cut);
       
     void add_config(const KeyConfig& kc);
-     
+
     void trigger_button(KeyConfig& kc);
 
     void add_work_list(const KeyConfig& kc);

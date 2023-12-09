@@ -54,6 +54,7 @@ Skills::start_workex()
             for (auto& it : m_auto_key)
             {
                 trigger_button(it);
+                ::Sleep(800);
             }
         }
 
@@ -317,7 +318,7 @@ Skills::trigger_button(
         || (kc.m_last_time + kc.m_time) < current_tick)
     {
         int key_id = KEY_CODE(kc.m_key_id);
-        
+         
         CFunction::pins()->skills(key_id);
 
         if (!kc.m_msg.empty())
