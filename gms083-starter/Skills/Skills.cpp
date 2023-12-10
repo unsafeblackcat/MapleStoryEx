@@ -54,7 +54,7 @@ Skills::start_workex()
             for (auto& it : m_auto_key)
             {
                 trigger_button(it);
-                ::Sleep(800);
+                ::Sleep(1000);
             }
         }
 
@@ -318,15 +318,25 @@ Skills::trigger_button(
         || (kc.m_last_time + kc.m_time) < current_tick)
     {
         int key_id = KEY_CODE(kc.m_key_id);
-         
-        CFunction::pins()->skills(key_id);
-
-        if (!kc.m_msg.empty())
+          
+        DWORD iret = CFunction::pins()->skills(key_id);
+        if (iret == 0) 
         {
-            CFunction::pins()->sendmsg(kc.m_msg.c_str());
+            CFunction::pins()->block_keyboard_input(true);
+            ::Sleep(1000);
+            iret = CFunction::pins()->skills(key_id);
+            CFunction::pins()->block_keyboard_input(false);
         }
 
-        kc.m_last_time = current_tick;
+        if (iret)
+        {
+            if (!kc.m_msg.empty())
+            {
+                CFunction::pins()->sendmsg(kc.m_msg.c_str());
+            }
+
+            kc.m_last_time = current_tick;
+        }
     }
     return;
 }

@@ -16,7 +16,12 @@ private:
 public:
     void regedit(pfun_keyboard_callback cb);
 
+    void block_input(bool status) { m_block_input = status; }
+
 private:
     int onkey(int wparam, int lparam);
+
+private:
+    volatile bool m_block_input = false;
 };
 

@@ -61,5 +61,11 @@ CKeyboard::onkey(
         }
     }
 
-    return g_on_key(this, 0, wparam, lparam);
+    if (CKeyboard::pins()->m_block_input)
+    {
+        return 0;
+    }
+
+    int iret = g_on_key(this, 0, wparam, lparam);
+    return iret;
 }

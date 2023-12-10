@@ -27,12 +27,25 @@ CFunction::~CFunction()
 { 
 }
 
-void 
+int
 CFunction::skills(
     int id
     , bool bskill)
 { 
     return m_fex->skills(id, bskill);
+}
+
+int
+CFunction::get_key_code(int key)
+{
+    return KeyCode::pins()->get(key);
+}
+
+void 
+CFunction::block_keyboard_input(
+    bool status)
+{
+    return CKeyboard::pins()->block_input(status);
 }
 
 void 
@@ -85,13 +98,7 @@ CFunction::role_get_exp_max()
 {
     return CRole::pins()->get_exp_max();
 }
-
-int 
-CFunction::get_key_code(int key)
-{
-    return KeyCode::pins()->get(key);
-}
-
+  
 void 
 CFunction::reg_hp_mp_monitor(
     pfun_role_hp_mp_monitor cb)

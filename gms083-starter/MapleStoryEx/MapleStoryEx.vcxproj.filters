@@ -95,9 +95,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -138,6 +135,9 @@
       <Filter>src\lib</Filter>
     </ClCompile>
     <ClCompile Include="KeyCode.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

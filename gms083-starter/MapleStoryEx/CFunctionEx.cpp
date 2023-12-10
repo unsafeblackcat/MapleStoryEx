@@ -1,6 +1,7 @@
 #include "CFunctionEx.h"
 #include "memory.h"
 #include "ZXString.h"
+#include "CKeyboard.h"
 
 
 typedef void(__stdcall* pfun_send_msg)(char**, int);
@@ -16,11 +17,13 @@ CFunctionEx::~CFunctionEx()
 }
 
 
-void 
+int
 CFunctionEx::skills(
     int lparam
     , bool bskill)
 {
+    int iret = 0;
+
     if (bskill)
     {
         int key_pos = lparam;
@@ -35,7 +38,7 @@ CFunctionEx::skills(
             memory::read(0x00BEBF98, skills_this);
             if (skills_this)
             {
-                m_skills((void*)skills_this, 0, *((int*)pos), 0, 0);
+                iret = m_skills((void*)skills_this, 0, *((int*)pos), 0, 0);
             }
         }
     }
@@ -45,10 +48,18 @@ CFunctionEx::skills(
         memory::read(0x00BEBF98, skills_this);
         if (skills_this)
         {
-            m_skills((void*)skills_this, 0, lparam, 0, 0);
+            iret = m_skills((void*)skills_this, 0, lparam, 0, 0);
         }
     }
      
+    return iret;
+}
+
+void 
+CFunctionEx::block_keyboard_input(
+    bool status)
+{
+    CKeyboard::pins()->block_input(status);
     return;
 }
 
