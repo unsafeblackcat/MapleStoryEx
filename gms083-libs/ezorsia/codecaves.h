@@ -885,3 +885,321 @@ __declspec(naked) void testingCodeCave4() {
 	}
 }
 
+//----
+unsigned char Array_aDefaultQKM[] = {
+	42, 0, 0, 0,
+	82, 0, 0, 0,
+	71, 0, 0, 0,
+	73, 0, 0, 0,
+	2, 0, 0, 0,
+	3, 0, 0, 0,
+	4, 0, 0, 0,
+	5, 0, 0, 0,
+	6, 0, 0, 0,
+	30, 0, 0, 0,
+	31, 0, 0, 0,
+	32, 0, 0, 0,
+	33, 0, 0, 0,
+	29, 0, 0, 0,
+	83, 0, 0, 0,
+	79, 0, 0, 0,
+	81, 0, 0, 0,
+	16, 0, 0, 0,
+	17, 0, 0, 0,
+	18, 0, 0, 0,
+	19, 0, 0, 0,
+	20, 0, 0, 0,
+	44, 0, 0, 0,
+	45, 0, 0, 0,
+	46, 0, 0, 0,
+	47, 0, 0, 0,
+	52, 0, 0, 0
+};
+
+// 0x00BE2DB0 confirmed, s_ptShortKeyPos
+unsigned char Array_ptShortKeyPos[] = {
+	7, 0, 0, 0,
+	8, 0, 0, 0,
+	42, 0, 0, 0,
+	8, 0, 0, 0,
+	77, 0, 0, 0,
+	8, 0, 0, 0,
+	112, 0, 0, 0,
+	8, 0, 0, 0,
+	147, 0, 0, 0,
+	8, 0, 0, 0,
+	182, 0, 0, 0,
+	8, 0, 0, 0,
+	217, 0, 0, 0,
+	8, 0, 0, 0,
+	252, 0, 0, 0,
+	8, 0, 0, 0,
+	287, 1, 0, 0,
+	8, 0, 0, 0,
+	322, 1, 0, 0,
+	8, 0, 0, 0,
+	357, 1, 0, 0,
+	8, 0, 0, 0,
+	392, 1, 0, 0,
+	8, 0, 0, 0,
+	427, 1, 0, 0,
+	8, 0, 0, 0,
+	7, 0, 0, 0,
+	41, 0, 0, 0,
+	42, 0, 0, 0,
+	41, 0, 0, 0,
+	77, 0, 0, 0,
+	41, 0, 0, 0,
+	112, 0, 0, 0,
+	41, 0, 0, 0,
+	147, 0, 0, 0,
+	41, 0, 0, 0,
+	182, 0, 0, 0,
+	41, 0, 0, 0,
+	217, 0, 0, 0,
+	41, 0, 0, 0,
+	252, 0, 0, 0,
+	41, 0, 0, 0,
+	287, 1, 0, 0,
+	41, 0, 0, 0,
+	322, 1, 0, 0,
+	41, 0, 0, 0,
+	357, 1, 0, 0,
+	41, 0, 0, 0,
+	392, 1, 0, 0,
+	41, 0, 0, 0,
+	427, 1, 0, 0,
+	41, 0, 0, 0
+};
+//Variant of Array_ptShortKeyPos
+unsigned char Array_ptShortKeyPos_Fixed_Tooltips[] = {
+	7,0,0,0,0,0,0,0,42,0,0,0,0,0,0,0,77,0,0,0,0,0,0,0,112,0,0,0,0,0,0,0,147,0,0,0,0,0,0,0,182,0,0,0,0,0,0,0,217,0,0,0,0,0,0,0,252,0,0,0,0,0,0,0,287,1,0,0,0,0,0,0,322,1,0,0,0,0,0,0,357,1,0,0,0,0,0,0,392,1,0,0,0,0,0,0,427,1,0,0,0,0,0,0,7,0,0,0,33,0,0,0,42,0,0,0,33,0,0,0,77,0,0,0,33,0,0,0,112,0,0,0,33,0,0,0,147,0,0,0,33,0,0,0,182,0,0,0,33,0,0,0,217,0,0,0,33,0,0,0,252,0,0,0,33,0,0,0,287,1,0,0,33,0,0,0,322,1,0,0,33,0,0,0,357,1,0,0,33,0,0,0,392,1,0,0,33,0,0,0,427,1,0,0,33,0,0,0
+};// This array will fix the janky offset of the tooltips
+// s_aDefaultQKM_0
+unsigned char Array_aDefaultQKM_0[] = {
+	42, 0, 0, 0,
+	82, 0, 0, 0,
+	71, 0, 0, 0,
+	73, 0, 0, 0, //4
+	29, 0, 0, 0,
+	83, 0, 0, 0,
+	79, 0, 0, 0,
+	81, 0, 0, 0, //8
+	42, 0, 0, 0,
+	82, 0, 0, 0,
+	71, 0, 0, 0,
+	73, 0, 0, 0, //12
+	29, 0, 0, 0,
+	83, 0, 0, 0,
+	79, 0, 0, 0,
+	81, 0, 0, 0, //16
+	84, 0, 0, 0,
+	85, 0, 0, 0,
+	86, 0, 0, 0,
+	87, 0, 0, 0, //20 
+	88, 0, 0, 0,
+	89, 0, 0, 0,
+	29, 0, 0, 0,
+	29, 0, 0, 0, //24
+	29, 0, 0, 0,
+	29, 0, 0, 0,
+	29, 0, 0, 0,
+};
+
+unsigned char Array_Expanded[312] = { 4, 4, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 0, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 1, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 2, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 3, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 5, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 6, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 7, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 8, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 10, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 11, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 12, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 13, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 14, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 15, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 16, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 17, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 23, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 24, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 25, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 26, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	4, 27, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	5, 50, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	5, 51, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	5, 52, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+	5, 53, 0, 0,
+	0, 0, 0, 0,
+	0, 0, 0, 0 };
+
+unsigned char Array_Expanded_Testing_Cooldown_fix[312] = { 0 };
+
+unsigned char cooldown_Array[124] = { 255, 255, 255, 255, 255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255 };
+
+DWORD Array_aDefaultQKM_Address = (DWORD)&Array_aDefaultQKM;
+DWORD Array_mystery_Address = (DWORD)&Array_Expanded;
+DWORD Array_mystery_Address_plus = (DWORD)&Array_Expanded + 1;
+DWORD cooldown_Array_Address = (DWORD)&cooldown_Array;
+DWORD Array_Expanded_Testing_Cooldown_fix_Address = (DWORD)&Array_Expanded_Testing_Cooldown_fix;
+
+DWORD CompareValidate_Retn = 0x8DD8BD;
+_declspec(naked) void CompareValidateFuncKeyMappedInfo_cave()
+{
+	_asm
+	{
+		push 0x138;
+		push 0x0;
+		push eax;
+		pushad;
+		popad;
+		jmp CompareValidate_Retn
+			//push 0x8DD8BD;
+			//ret;
+	}
+}
+
+DWORD sub_9FA0CB_cave_retn_1 = 0x9FA0E1;
+_declspec(naked) void sub_9FA0CB_cave()
+{
+	_asm {
+		test eax, eax;
+		jne label;
+		push 0xD4;
+		pushad;
+		popad;
+		// -> ZAllocEx<ZAllocAnonSelector>::Alloc(ZAllocEx<ZAllocAnonSelector>::_s_alloc, 0x44u);
+		//push 0x9FA0E1;
+		//ret;
+		jmp sub_9FA0CB_cave_retn_1
+			label :
+		push 0x138;
+		push 0x0;
+		push eax;
+		pushad;
+		popad;
+		// -> memset(this + 0xD20, 0, 0x60u);
+		//push 0x8DD8BD;
+		//ret;
+		jmp CompareValidate_Retn
+	}
+}
+//DWORD sDefaultQuickslotKeyMap_cave_retn = 0x72B7C2;
+_declspec(naked) void sDefaultQuickslotKeyMap_cave()
+{
+	_asm {
+		push ebx;
+		push esi;
+		push edi;
+		xor edx, edx;
+		mov ebx, ecx;
+		call label;
+		nop;
+		lea edi, dword ptr ds : [ebx + 0x4] ;
+		mov ecx, 0x1A;
+		mov esi, Array_aDefaultQKM_Address;
+		rep movsd;
+		lea edi, dword ptr ds : [ebx + 0x6C] ;
+		mov ecx, 0x1A;
+		mov esi, Array_aDefaultQKM_Address;
+		rep movsd;
+		pop edi;
+		pop esi;
+		pop ebx;
+		ret;
+		// 0xBF8EE8
+	label:
+		push esi;
+		mov esi, ecx;
+		lea eax, dword ptr ds : [esi + 0x4] ;
+		// -> _DWORD *__fastcall sub_72B7BC(_DWORD *a1)
+		push 0x72B7C2;
+		ret;
+		//jmp sDefaultQuickslotKeyMap_cave_retn
+	}
+}
+_declspec(naked) void DefaultQuickslotKeyMap_cave()
+{
+	_asm {
+		push esi;
+		push edi;
+		lea eax, dword ptr ds : [ecx + 0x4] ;
+		mov esi, Array_aDefaultQKM_Address;
+		mov ecx, 0x1A;
+		mov edi, eax;
+		rep movsd;
+		pop edi;
+		pop esi;
+		ret;
+	}
+}
+_declspec(naked) void Restore_Array_Expanded() //Thank you Max
+{
+	_asm {
+		lea eax, [esi + 0D7Ch]
+		push esi
+		push edi
+		push ecx
+		mov esi, [Array_Expanded_Testing_Cooldown_fix_Address]
+		mov edi, Array_mystery_Address
+		mov ecx, 78
+		rep movsd
+		pop ecx
+		pop edi
+		pop esi
+		push 0x008CFE03;
+		ret;
+	}
+}
