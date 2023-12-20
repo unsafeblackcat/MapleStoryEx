@@ -4,24 +4,24 @@
 
 void SetDamageCap(double dDamage)
 {
-	//ÆÆ¹¦
+	//ç ´åŠŸ
 	Memory::WriteDouble(0x00AFE8A0, dDamage);	//ty rain
 	int setDamageCapInt = static_cast<int>(dDamage < 0 ? dDamage - 0.5 : dDamage + 0.5);
 	Memory::WriteInt(0x008C3304 + 1, setDamageCapInt); //ty rain
 }
 void SetMoveSpeedCap(int iSpeedValue)
 {
-	//ÒÆËÙ
+	//ç§»é€Ÿ
 	Memory::WriteInt(0x00780743 + 3, iSpeedValue);
 	Memory::WriteInt(0x008C4286 + 1, iSpeedValue);
 	Memory::WriteInt(0x0094D91E + 1, iSpeedValue);
 }
 void SetServerIP(const char* serverIP_Address)
 {
-	Memory::FillBytes(0x00AFE084, 0x00, 0x006FE0B2 - 0x006FE084);//É¾³ı¿Í»§¶ËÖĞÏÖÓĞµÄ·şÎñÆ÷IPµØÖ·
-	Memory::WriteString(0x00AFE084, serverIP_Address);//Ğ´ÈëÓÃ»§ÉèÖÃµÄIPµØÖ·
-	Memory::WriteString(0x00AFE084 + 16, serverIP_Address);//Ğ´ÈëÓÃ»§ÉèÖÃµÄIPµØÖ·
-	Memory::WriteString(0x00AFE084 + 32, serverIP_Address);//Ğ´ÈëÓÃ»§ÉèÖÃµÄIPµØÖ·
+	Memory::FillBytes(0x00AFE084, 0x00, 0x006FE0B2 - 0x006FE084);//åˆ é™¤å®¢æˆ·ç«¯ä¸­ç°æœ‰çš„æœåŠ¡å™¨IPåœ°å€
+	Memory::WriteString(0x00AFE084, serverIP_Address);//å†™å…¥ç”¨æˆ·è®¾ç½®çš„IPåœ°å€
+	Memory::WriteString(0x00AFE084 + 16, serverIP_Address);//å†™å…¥ç”¨æˆ·è®¾ç½®çš„IPåœ°å€
+	Memory::WriteString(0x00AFE084 + 32, serverIP_Address);//å†™å…¥ç”¨æˆ·è®¾ç½®çš„IPåœ°å€
 }
 
 void CharacterBottomRepair()
@@ -36,13 +36,13 @@ void CharacterBottomRepair()
 }
 void SetKeyboardPosition()
 {
-	//¼üÅÌ
+	//é”®ç›˜
 	Memory::WriteInt(dwQuickSlotInitVPos + 1, 722 );//721
 	Memory::WriteInt(dwQuickSlotInitHPos + 1, 890); //798
 	Memory::WriteInt(dwQuickSlotVPos + 2, 722 );//721
 	Memory::WriteInt(dwQuickSlotHPos + 1, 890);
 
-	//ÆÁ±ÎÔ­À´µÄ´°¿Ú
+	//å±è”½åŸæ¥çš„çª—å£
 	Memory::WriteInt(dwQuickSlotCWndVPos + 2, -120);//(600 - 720) / 2 - 427
 	Memory::WriteInt(dwQuickSlotCWndHPos + 2, -120);//-798
 }
@@ -292,15 +292,15 @@ void GainItemMessage()
 	int m_nGameHeight = 720;
 	Memory::WriteInt(0x00BE273C, 128);//??
 	Memory::WriteByte(0x00A5FC2B, 0x05);//??
-	Memory::WriteByte(0x0089B636 + 2, 0x01); //Óë¾­ÑéÔöÒæ/ÎïÆ·Ê°È¡ÏûÏ¢ÓĞ¹Ø£¬ËÆºõ»áÓ°ÏìÏûÏ¢¸ß¶È£¡×î³õÊÇ1U£¬µ«ÓÉÓÚunsigned intÔÚchar selectºóÊ¹Æä±ÀÀ£¶ø¸ü¸Ä
-	Memory::WriteByte(0x00592A06 + 1, 0x01);//???¿ÉÄÜÓëÊó±êÎ»ÖÃÓĞ¹Ø
+	Memory::WriteByte(0x0089B636 + 2, 0x01); //ä¸ç»éªŒå¢ç›Š/ç‰©å“æ‹¾å–æ¶ˆæ¯æœ‰å…³ï¼Œä¼¼ä¹ä¼šå½±å“æ¶ˆæ¯é«˜åº¦ï¼æœ€åˆæ˜¯1Uï¼Œä½†ç”±äºunsigned intåœ¨char selectåä½¿å…¶å´©æºƒè€Œæ›´æ”¹
+	Memory::WriteByte(0x00592A06 + 1, 0x01);//???å¯èƒ½ä¸é¼ æ ‡ä½ç½®æœ‰å…³
 
-	Memory::WriteInt(0x00744EB4 + 1, m_nGameWidth);//??ÓëÓÎÏ·ÖĞµÄ½ØÆÁ¹¦ÄÜÏà¹Ø
-	Memory::WriteInt(0x00744EB9 + 1, m_nGameHeight);//??ÓëÓÎÏ·ÖĞµÄ½ØÆÁ¹¦ÄÜÏà¹Ø
-	Memory::WriteInt(0x00744E2A + 1, 3 * m_nGameWidth * m_nGameHeight);//??ÓëÓÎÏ·ÖĞµÄ½ØÆÁ¹¦ÄÜÏà¹Ø
-	Memory::WriteInt(0x00744E43 + 1, m_nGameWidth * m_nGameHeight);//??ÓëÓÎÏ·ÖĞµÄ½ØÆÁ¹¦ÄÜÏà¹Ø
-	Memory::WriteInt(0x00744DA6 + 1, 4 * m_nGameWidth * m_nGameHeight);//??ÓëÓÎÏ·ÖĞµÄ½ØÆÁ¹¦ÄÜÏà¹Ø
-	Memory::WriteInt(0x00897BB4 + 1, (m_nGameWidth / 2) - 143);//??Óë¾­ÑéÔöÒæ/ÎïÆ·Ê°È¡ÏûÏ¢Ïà¹Ø
+	Memory::WriteInt(0x00744EB4 + 1, m_nGameWidth);//??ä¸æ¸¸æˆä¸­çš„æˆªå±åŠŸèƒ½ç›¸å…³
+	Memory::WriteInt(0x00744EB9 + 1, m_nGameHeight);//??ä¸æ¸¸æˆä¸­çš„æˆªå±åŠŸèƒ½ç›¸å…³
+	Memory::WriteInt(0x00744E2A + 1, 3 * m_nGameWidth * m_nGameHeight);//??ä¸æ¸¸æˆä¸­çš„æˆªå±åŠŸèƒ½ç›¸å…³
+	Memory::WriteInt(0x00744E43 + 1, m_nGameWidth * m_nGameHeight);//??ä¸æ¸¸æˆä¸­çš„æˆªå±åŠŸèƒ½ç›¸å…³
+	Memory::WriteInt(0x00744DA6 + 1, 4 * m_nGameWidth * m_nGameHeight);//??ä¸æ¸¸æˆä¸­çš„æˆªå±åŠŸèƒ½ç›¸å…³
+	Memory::WriteInt(0x00897BB4 + 1, (m_nGameWidth / 2) - 143);//??ä¸ç»éªŒå¢ç›Š/ç‰©å“æ‹¾å–æ¶ˆæ¯ç›¸å…³
 }
 
 void GainItemMessage(int msgAmnt, int msgAmntOffset,void* ptrMoreGainMsgs,void* ptrMoreGainMsgsFade, void* ptrMoreGainMsgsFade1)
@@ -309,14 +309,14 @@ void GainItemMessage(int msgAmnt, int msgAmntOffset,void* ptrMoreGainMsgs,void* 
 	int m_nGameHeight = 720;
 	Memory::WriteInt(0x0089B639 + 1, m_nGameHeight - 6 - msgAmntOffset);//inventory/exp gain y axis //####hd100 //90
 	Memory::WriteInt(0x0089B6F7 + 1, m_nGameWidth - 405);//inventory/exp gain x axis //310 //####hd415 //405
-	Memory::WriteInt(0x0089AF33 + 1, 400);//ÔÚDaviµÄ°ïÖúÏÂÕÒµ½Ê°È¡ºÍexpÔöÒæÏûÏ¢»­²¼//µÄ³¤¶È
-	Memory::WriteInt(0x0089B2C6 + 1, 400);//µØÖ·½«ÉÏÃæµ÷Õû¹ıµÄ»­²¼ÖĞµÄÏûÏ¢ÒÆ¶¯µ½ĞÂ»­²¼µÄÖĞĞÄ//Ğ»Ğ»chris
+	Memory::WriteInt(0x0089AF33 + 1, 400);//åœ¨Daviçš„å¸®åŠ©ä¸‹æ‰¾åˆ°æ‹¾å–å’Œexpå¢ç›Šæ¶ˆæ¯ç”»å¸ƒ//çš„é•¿åº¦
+	Memory::WriteInt(0x0089B2C6 + 1, 400);//åœ°å€å°†ä¸Šé¢è°ƒæ•´è¿‡çš„ç”»å¸ƒä¸­çš„æ¶ˆæ¯ç§»åŠ¨åˆ°æ–°ç”»å¸ƒçš„ä¸­å¿ƒ//è°¢è°¢chris
 	Memory::WriteInt(0x0089AEE2 + 3, msgAmnt);//moregainmsgs part 1
 	Memory::CodeCave(ptrMoreGainMsgs, dwMoreGainMsgs, MoreGainMsgsNOPs); //moregainmsgs part 2
 	Memory::CodeCave(ptrMoreGainMsgsFade, dwMoreGainMsgsFade, MoreGainMsgsFadeNOPs); //moregainmsgsFade
 	Memory::CodeCave(ptrMoreGainMsgsFade1, dwMoreGainMsgsFade1, MoreGainMsgsFade1NOPs); //moregainmsgsFade1
-	Memory::WriteInt(0x0045B337 + 1, m_nGameWidth);//ÓësmegaÏÔÊ¾Ïà¹Ø//smega¿ÉÄÜ¿ªÊ¼µ¯³öµÄÆÁÄ»ÇøÓò
-	Memory::WriteInt(0x0045B417 + 1, m_nGameWidth - 225);//´øÓĞÍ·ÏñxÖáµÄsmegaÔÚÆÁÄ»ÉÏ³ÖĞøÊ±¼ä
+	Memory::WriteInt(0x0045B337 + 1, m_nGameWidth);//ä¸smegaæ˜¾ç¤ºç›¸å…³//smegaå¯èƒ½å¼€å§‹å¼¹å‡ºçš„å±å¹•åŒºåŸŸ
+	Memory::WriteInt(0x0045B417 + 1, m_nGameWidth - 225);//å¸¦æœ‰å¤´åƒxè½´çš„smegaåœ¨å±å¹•ä¸ŠæŒç»­æ—¶é—´
 	Memory::WriteInt(0x007C2531 + 1, m_nGameHeight - 80);//??
 	Memory::WriteInt(0x0089B796 + 2, m_nGameHeight - 18);//???related to exp gain/item pick up msg
 	Memory::WriteInt(0x0089BA03 + 1, m_nGameHeight - 96); //??related to exp gain/item pick up msg
@@ -326,7 +326,7 @@ void VersionRightTop(void* ptrCodeCave, bool bUsed)
 {
 	int m_nGameWidth = 1280;
 	if (bUsed) {
-		Memory::WriteInt(0x005F464D + 1, m_nGameWidth - 165);	//mov eax,800 ; RelMove?	//½ôÌùÆÁÄ»Ò»²àµÄµÇÂ¼¿ò¼ÜµÄÓÎÏ·°æ±¾ºÅ//ÄúÈÔÈ»ĞèÒªÆ«ÒÆntop£¬Èç¹ûÄúµÄ¸ß¶È·Ö±æÂÊÌ«´ó£¬Ôò¿ÉÄÜĞèÒª´úÂë¶´Ñ¨
+		Memory::WriteInt(0x005F464D + 1, m_nGameWidth - 165);	//mov eax,800 ; RelMove?	//ç´§è´´å±å¹•ä¸€ä¾§çš„ç™»å½•æ¡†æ¶çš„æ¸¸æˆç‰ˆæœ¬å·//æ‚¨ä»ç„¶éœ€è¦åç§»ntopï¼Œå¦‚æœæ‚¨çš„é«˜åº¦åˆ†è¾¨ç‡å¤ªå¤§ï¼Œåˆ™å¯èƒ½éœ€è¦ä»£ç æ´ç©´
 	}
 	else {
 		Memory::CodeCave(ptrCodeCave, dwVersionNumberFix, dwVersionNumberFixNOPs);
@@ -351,11 +351,11 @@ void CashShopMove2Center(void* ptrCashShopFix1, void* ptrCashShopFix2, void* ptr
 
 void WorldSelectDlgMove2Right(int a1y, void* ptrLoginBackCanvasFix, void* ptrLoginViewRecFix, void* ptrLoginDescriptorFix)
 {
-	Memory::CodeCave(ptrLoginBackCanvasFix, dwLoginBackCanvasFix, LoginBackCanvasFixNOPs);	//worldselect°´Å¥ĞŞ¸´//¸ĞĞ»tetoÖ¸³öÎÒÔÚ²éÕÒ¹¹Ôìº¯ÊıÊ±µÄ´íÎó
-	//yOffsetOfLoginBackBtnFix = 300 + myHeight; xOffsetOfLoginBackBtnFix = 0 + myWidth;	//ºóÍË°´Å¥µÄ²ÎÊı
-	//Memory::CodeCave(ccLoginBackBtnFix, dwLoginBackBtnFix, LoginBackBtnFixNOPs); //ÊÀ½çÉÏµÄºóÍË°´Å¥Ñ¡Ôñ//°´Å¥Ëæ»­²¼ÒÆ¶¯Ê±²»ĞèÒª
+	Memory::CodeCave(ptrLoginBackCanvasFix, dwLoginBackCanvasFix, LoginBackCanvasFixNOPs);	//worldselectæŒ‰é’®ä¿®å¤//æ„Ÿè°¢tetoæŒ‡å‡ºæˆ‘åœ¨æŸ¥æ‰¾æ„é€ å‡½æ•°æ—¶çš„é”™è¯¯
+	//yOffsetOfLoginBackBtnFix = 300 + myHeight; xOffsetOfLoginBackBtnFix = 0 + myWidth;	//åé€€æŒ‰é’®çš„å‚æ•°
+	//Memory::CodeCave(ccLoginBackBtnFix, dwLoginBackBtnFix, LoginBackBtnFixNOPs); //ä¸–ç•Œä¸Šçš„åé€€æŒ‰é’®é€‰æ‹©//æŒ‰é’®éšç”»å¸ƒç§»åŠ¨æ—¶ä¸éœ€è¦
 	Memory::CodeCave(ptrLoginViewRecFix, dwLoginViewRecFix, LoginViewRecFixNOPs);	//world ViewRec fix	
-	Memory::WriteInt(0x0060D849 + 1, 300 + a1y); //speed 1	//Í¨¹ıÌá¸ßÏÔÊ¾ËÙ¶ÈÀ´ÁÙÊ±ĞŞ¸´£¬Ö±µ½ÎÒÔÚ³ÌĞò±à³Ì·½Ãæ×öµÃ×ã¹»ºÃ
+	Memory::WriteInt(0x0060D849 + 1, 300 + a1y); //speed 1	//é€šè¿‡æé«˜æ˜¾ç¤ºé€Ÿåº¦æ¥ä¸´æ—¶ä¿®å¤ï¼Œç›´åˆ°æˆ‘åœ¨ç¨‹åºç¼–ç¨‹æ–¹é¢åšå¾—è¶³å¤Ÿå¥½
 	//and memory management and reverse engineering to use nexon's own functions to put a black layer with greater z value to cover the tabs being shown off screen at origin
 	Memory::CodeCave(ptrLoginDescriptorFix, dwLoginDescriptorFix, LoginDescriptorFixNOPs);	//world LoginDescriptor fix	
 }
@@ -367,20 +367,20 @@ void CameraRepair(void* ptrAlwaysViewRestoreFix)
 	Memory::WriteInt(0x00641F61 + 1, (unsigned int)floor(m_nGameWidth / 2));	//mov ebc,400 ;  VRleft		//camera movement
 	Memory::WriteInt(0x00641FC8 + 1, (unsigned int)floor(m_nGameHeight / 2));	//add eax,300  ; VRTop //camera movement //not working for most maps
 	//Memory::WriteInt(0x0064202F + 2, (unsigned int)floor(m_nGameWidth / 2));	//mov ebc,400 ;  VRright		//camera movement	//crashes
-	Memory::WriteInt(0x0064208F + 1, (unsigned int)floor(m_nGameHeight / 2));	//add eax,300  ; VRbottom Ïà»úÒÆ¶¯//²»ÊÊÓÃÓÚ´ó¶àÊıµØÍ¼
-	Memory::CodeCave(ptrAlwaysViewRestoreFix, dwAlwaysViewRestoreFix, dwAlwaysViewRestoreFixNOPs);	//ĞŞ¸´ËùÓĞµØÍ¼ÉÏµÄÊÓÍ¼»Ö¸´£¬Ä¿Ç°Ê²Ã´¶¼²»×ö£»ÎÒ¿ÉÄÜ¿´´íµØ·½ÁË
+	Memory::WriteInt(0x0064208F + 1, (unsigned int)floor(m_nGameHeight / 2));	//add eax,300  ; VRbottom ç›¸æœºç§»åŠ¨//ä¸é€‚ç”¨äºå¤§å¤šæ•°åœ°å›¾
+	Memory::CodeCave(ptrAlwaysViewRestoreFix, dwAlwaysViewRestoreFix, dwAlwaysViewRestoreFixNOPs);	//ä¿®å¤æ‰€æœ‰åœ°å›¾ä¸Šçš„è§†å›¾æ¢å¤ï¼Œç›®å‰ä»€ä¹ˆéƒ½ä¸åšï¼›æˆ‘å¯èƒ½çœ‹é”™åœ°æ–¹äº†
 }
 
 void PartyTradeChatMove()
 {
 	int m_nGameWidth = 1280;
 	int m_nGameHeight = 720;
-	Memory::WriteInt(0x00849E39 + 1, m_nGameHeight - 177); //ÏµÍ³²Ëµ¥µ¯³ö
-	Memory::WriteInt(0x0084A5B7 + 1, m_nGameHeight - 281); //¿ì½İ¼üµ¯³ö//0x84A5BD-ÏµÍ³Ñ¡Ïî¡°X¡±Î»ÖÃ¡£Èç¹ûĞèÒª
+	Memory::WriteInt(0x00849E39 + 1, m_nGameHeight - 177); //ç³»ç»Ÿèœå•å¼¹å‡º
+	Memory::WriteInt(0x0084A5B7 + 1, m_nGameHeight - 281); //å¿«æ·é”®å¼¹å‡º//0x84A5BD-ç³»ç»Ÿé€‰é¡¹â€œXâ€ä½ç½®ã€‚å¦‚æœéœ€è¦
 
-	Memory::WriteInt(0x00522C73 + 1, m_nGameHeight - 92);// ??v¸÷ÖÖÇëÇó£¬Èç¾Û»á£¬¹«»á£¬ÅóÓÑ£¬¼ÒÈË£¬µ¯³öµÄÑûÇë
+	Memory::WriteInt(0x00522C73 + 1, m_nGameHeight - 92);// ??vå„ç§è¯·æ±‚ï¼Œå¦‚èšä¼šï¼Œå…¬ä¼šï¼Œæœ‹å‹ï¼Œå®¶äººï¼Œå¼¹å‡ºçš„é‚€è¯·
 	Memory::WriteInt(0x00522E65 + 1, m_nGameHeight - 92); // ??various requests like party, guild, friend, family, invites that pop up
-	Memory::WriteInt(0x0052307E + 1, m_nGameHeight - 92);// ¸÷ÖÖÇëÇó£¬Èç¾Û»á£¬¹«»á£¬ÅóÓÑ£¬¼ÒÈË£¬µ¯³öµÄÑûÇë
+	Memory::WriteInt(0x0052307E + 1, m_nGameHeight - 92);// å„ç§è¯·æ±‚ï¼Œå¦‚èšä¼šï¼Œå…¬ä¼šï¼Œæœ‹å‹ï¼Œå®¶äººï¼Œå¼¹å‡ºçš„é‚€è¯·
 	Memory::WriteInt(0x00523359 + 1, m_nGameHeight - 92);// various requests like party, guild, friend, family, invites that pop up
 	Memory::WriteInt(0x00523595 + 1, m_nGameHeight - 92);// various requests like party, guild, friend, family, invites that pop up //quest complete y axis
 	Memory::WriteInt(0x0052378B + 1, m_nGameHeight - 92);// various requests like party, guild, friend, family, invites that pop up
@@ -404,7 +404,97 @@ void PartyTradeChatMove()
 	Memory::WriteInt(0x005243EF + 1, m_nGameWidth - 942);//various requests like party, guild, friend, family, invites that pop up//??
 }
 
+void LongKeyboards(unsigned int uiArray_aDefaultQKM_0, unsigned int uiArray_Expanded, unsigned int uiArray_ptShortKeyPos, unsigned int uiArray_ptShortKeyPos_Fixed_Tooltips, unsigned int uicooldown_Array,
+void* CompareValidateFuncKeyMappedInfo_cave, void* sub_9FA0CB_cave, void* sDefaultQuickslotKeyMap_cave, void* DefaultQuickslotKeyMap_cave, void* Restore_Array_Expanded)
+{
+
+	// CUIStatusBar::OnCreate
+	Memory::WriteByte(0x008D155C + 1, 0xF0); // Draw rest of quickslot bar
+	Memory::WriteByte(0x008D155C + 2, 0x03);
+	Memory::WriteByte(0x008D182E + 1, 0xF0); // Draw rest of hotkeys
+	Memory::WriteByte(0x008D182E + 2, 0x03);
+	Memory::WriteByte(0x008D1AC0 + 1, 0xF0); // Draw rest of cooldowns, who tf knows why. TY Rulax
+	Memory::WriteByte(0x008D1AC0 + 2, 0x03);
+
+	//----CQuickslotKeyMappedMan::CQuickslotKeyMappedMan?????
+	Memory::WriteInt(0x0072B7CE + 1, uiArray_aDefaultQKM_0);
+	Memory::WriteInt(0x0072B8EB + 1, uiArray_aDefaultQKM_0);
+
+	//----CUIStatusBar::CQuickSlot::CompareValidateFuncKeyMappedInfo
+	Memory::WriteByte(0x008DD916, 0x1A); // increase 8 --> 26
+	Memory::WriteByte(0x008DD8AD, 0x1A); // increase 8 --> 26
+	Memory::WriteByte(0x008DD8FD, 0xBB);
+	Memory::WriteInt(0x008DD8FD + 1, uiArray_Expanded);
+	Memory::WriteByte(0x008DD8FD + 5, 0x90); //Errant byte
+	Memory::WriteByte(0x008DD898, 0xB8);
+	Memory::WriteInt(0x008DD898 + 1, uiArray_Expanded);
+	Memory::WriteByte(0x008DD898 + 5, 0x90); //Errant Byte
+
+	//----CUIStatusBar::CQuickSlot::Draw
+	Memory::WriteByte(0x008DE75E + 3, 0x6C);
+	Memory::WriteByte(0x008DDF99, 0xB8);
+	Memory::WriteInt(0x008DDF99 + 1, uiArray_Expanded);
+	Memory::FillBytes(0x008DDF99 + 5, 0x90, 3); // Nopping errant operations
+
+	//----CUIStatusBar::OnMouseMove
+	Memory::WriteByte(0x008D7F1E + 1, 0x34);
+	Memory::WriteByte(0x008D7F1E + 2, 0x85);
+	Memory::WriteInt(0x008D7F1E + 3, uiArray_Expanded);
+
+	//----CUIStatusBar::CQuickSlot::GetPosByIndex
+	Memory::WriteInt(0x008DE94D + 2, uiArray_ptShortKeyPos);
+	Memory::WriteInt(0x008DE955 + 2, uiArray_ptShortKeyPos + 4);
+	Memory::WriteByte(0x008DE941 + 2, 0x1A); //change cmp 8 --> cmp 26
+
+	//CUIStatusBar::GetShortCutIndexByPos
+	Memory::WriteInt(0x008DE8F4 + 1, uiArray_ptShortKeyPos_Fixed_Tooltips + 4);
+	Memory::WriteByte(0x008DE926 + 1, 0x3E);
+
+	//CUIStatusBar::CQuickSlot::DrawSkillCooltime
+	Memory::WriteByte(0x008E099F + 3, 0x1A);
+	Memory::WriteByte(0x008E069D, 0xBE);
+	Memory::WriteInt(0x008E069D + 1, uicooldown_Array); //Pass enlarged FFFFF array
+	Memory::WriteByte(0x008E069D + 5, 0x90); //Errant byte
+	Memory::WriteByte(0x008E06A3, 0xBF);
+	Memory::WriteInt(0x008E06A3 + 1, uiArray_Expanded + 1);
+	Memory::WriteByte(0x008E06A3 + 5, 0x90);
+
+	//----CDraggableMenu::OnDropped
+	Memory::WriteByte(0x004F928A + 2, 0x1A); //change cmp 8 --> cmp 26
+	//----CDraggableMenu::MapFuncKey
+	Memory::WriteByte(0x004F93F9 + 2, 0x1A); //change cmp 8 --> cmp 26
+	//----CUIKeyConfig::OnDestroy
+	Memory::WriteByte(0x00833797 + 2, 0x6C); // Updates the offset to 108 (triple) (old->24h)
+	Memory::WriteByte(0x00833841 + 2, 0x6C); // Updates the offset to 108 (triple) (old->24h)
+	Memory::WriteByte(0x00833791 + 1, 0x68); // push 68h (triple)
+	Memory::WriteByte(0x0083383B + 1, 0x68); // push 68h (triple)
+	//----CUIKeyConfig::~CUIKeyConfig
+	Memory::WriteByte(0x0083287F + 2, 0x6C); // triple the base value at this hex (old->24h)
+	Memory::WriteByte(0x00832882 + 1, 0x68); // push 68h (triple)
+	//----CQuickslotKeyMappedMan::SaveQuickslotKeyMap
+	Memory::WriteByte(0x0072B8C0 + 2, 0x6C); // triple the base value at this hex (old->24h)
+	Memory::WriteByte(0x0072B8A0 + 1, 0x68); // push 68h, (triple) //CQuickslotKeyMappedMan::SaveQuickslotKeyMap
+	Memory::WriteByte(0x0072B8BD + 1, 0x68); // push 68h, (triple) //CQuickslotKeyMappedMan::SaveQuickslotKeyMap
+	//----CQuickslotKeyMappedMan::OnInit
+	Memory::WriteByte(0x0072B861 + 1, 0x68); // push 68h (triple) (these ones might have to be just 60)
+	Memory::WriteByte(0x0072B867 + 2, 0x6C); // triple the base value at this hex (old->24h)
+	//----CUIKeyConfig::CNoticeDlg::OnChildNotify????
+	Memory::WriteByte(0x00836A1E + 1, 0x68); // push 68h (triple)
+	Memory::WriteByte(0x00836A21 + 2, 0x6C); // triple the base value at this hex (old->24h)
+
+
+// CODECAVES CLIENT EDITS ---- 
+	Memory::CodeCave(CompareValidateFuncKeyMappedInfo_cave, 0x8DD8B8, 5);
+	Memory::CodeCave(sub_9FA0CB_cave, 0x9FA0DB, 5);
+	Memory::CodeCave(sDefaultQuickslotKeyMap_cave, 0x72B7BC, 5);
+	Memory::CodeCave(DefaultQuickslotKeyMap_cave, 0x72B8E6, 5);
+	Memory::CodeCave(Restore_Array_Expanded, 0x008CFDFD, 6); //restores the skill array to 0s
+
+	SetKeyboardPosition();
+}
+
+
 void ExtraHere()
 {
-	//ÈçÄúÓĞºÃÓÃµÄµØÖ·ÇëÔÚ´Ë´¦Ìí¼Ó»ò¶îÍâ·â×°~£¡  byÍôÍôºº±¤°ü
+	//å¦‚æ‚¨æœ‰å¥½ç”¨çš„åœ°å€è¯·åœ¨æ­¤å¤„æ·»åŠ æˆ–é¢å¤–å°è£…~ï¼  byæ±ªæ±ªæ±‰å ¡åŒ…
 }
