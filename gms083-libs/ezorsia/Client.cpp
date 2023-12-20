@@ -15,13 +15,13 @@ bool Client::bIfMoveCashShopToCenter = true;
 
 void Client::UpdateGameStartup() {
 
-	//Memory::FillBytes(0x00C08459, 0x20, 0x00C0846E - 0x00C08459);//É¾³ıÌáÉıÇëÇó
-	//Memory::WriteByte(0x00C08459, 0x22);//É¾³ıÌáÉıÇëÇó
-	//Memory::WriteString(0x00C08459 + 1, "asInvoker");//´ÓdllÖĞÉ¾³ıÌáÉıÇëÇó//²»Æğ×÷ÓÃ
-	//Memory::WriteByte(0x00C08463, 0x22);//É¾³ıÌáÉıÇëÇó
-	//Memory::WriteByte(0x0049C2CD + 1, 0x01);//É¾³ıÌáÉıÇëÇó//²»ĞÒµÄÊÇÈÔÈ»²»Æğ×÷ÓÃ//ÈÔÈ»±£Áô´ËÏîÒÔ¼ì²é¹ÜÀíÔ±È¨ÏŞ
-	//Memory::WriteByte(0x0049CFE8 + 1, 0x01);//¿ÉÄÜĞèÒªÓ°ÏìWINAPI CreateProcess£¬ÕâĞèÒªÒ»¸öÆô¶¯Æ÷//£¬ÒòÎª´ò°üµÄ¿Í»§¶ËÎŞ·¨Ö±½Ó±à¼­ÕâĞ©Æ«ÒÆ
-	//Memory::WriteByte(0x0049D398 + 1, 0x01);//É¾³ıÌáÉıÇëÇó//ÈÔÈ»²»Æğ×÷ÓÃ
+	//Memory::FillBytes(0x00C08459, 0x20, 0x00C0846E - 0x00C08459);//åˆ é™¤æå‡è¯·æ±‚
+	//Memory::WriteByte(0x00C08459, 0x22);//åˆ é™¤æå‡è¯·æ±‚
+	//Memory::WriteString(0x00C08459 + 1, "asInvoker");//ä»dllä¸­åˆ é™¤æå‡è¯·æ±‚//ä¸èµ·ä½œç”¨
+	//Memory::WriteByte(0x00C08463, 0x22);//åˆ é™¤æå‡è¯·æ±‚
+	//Memory::WriteByte(0x0049C2CD + 1, 0x01);//åˆ é™¤æå‡è¯·æ±‚//ä¸å¹¸çš„æ˜¯ä»ç„¶ä¸èµ·ä½œç”¨//ä»ç„¶ä¿ç•™æ­¤é¡¹ä»¥æ£€æŸ¥ç®¡ç†å‘˜æƒé™
+	//Memory::WriteByte(0x0049CFE8 + 1, 0x01);//å¯èƒ½éœ€è¦å½±å“WINAPI CreateProcessï¼Œè¿™éœ€è¦ä¸€ä¸ªå¯åŠ¨å™¨//ï¼Œå› ä¸ºæ‰“åŒ…çš„å®¢æˆ·ç«¯æ— æ³•ç›´æ¥ç¼–è¾‘è¿™äº›åç§»
+	//Memory::WriteByte(0x0049D398 + 1, 0x01);//åˆ é™¤æå‡è¯·æ±‚//ä»ç„¶ä¸èµ·ä½œç”¨
 
 	const char* serverIP_Address = Client::ServerIP_AddressFromINI.c_str();
 
@@ -35,73 +35,74 @@ void Client::UpdateGameStartup() {
 void Client::UpdateResolution() {
 	nStatusBarY = Client::m_nGameHeight - 578;
 
-	
+	LongKeyboards((DWORD)&Array_aDefaultQKM,(DWORD)&Array_Expanded, (DWORD)&Array_ptShortKeyPos, (DWORD)&Array_ptShortKeyPos_Fixed_Tooltips, (DWORD)&cooldown_Array, CompareValidateFuncKeyMappedInfo_cave,
+		sub_9FA0CB_cave, sDefaultQuickslotKeyMap_cave, DefaultQuickslotKeyMap_cave, Restore_Array_Expanded);	
 
 	TopMessageExtend();
 
 	BossBarRepair();
 
-	//ÌØĞ§·ÅÔÚÆÁÄ»ÖĞ¼ä
+	//ç‰¹æ•ˆæ”¾åœ¨å±å¹•ä¸­é—´
 	CenterMessage();
 
-	//ÓÒÏÂ½Ç»ñÈ¡¾­Ñé,»ñÈ¡µÀ¾ßµÄ×ø±êĞŞ¸´£¬Èç¹ûµ÷ÓÃSetKeyboardPosition·½·¨£¬´Ë´¦Ò²Ó¦µ÷ÓÃ
+	//å³ä¸‹è§’è·å–ç»éªŒ,è·å–é“å…·çš„åæ ‡ä¿®å¤ï¼Œå¦‚æœè°ƒç”¨SetKeyboardPositionæ–¹æ³•ï¼Œæ­¤å¤„ä¹Ÿåº”è°ƒç”¨
 	int msgAmntOffset, msgAmnt; 
 	msgAmnt = MsgAmount; 
-	msgAmntOffset = msgAmnt *14;//Èç¹ûÒÆ¶¯ÁË¼üÅÌ£¬ÕâÀï¿ÉÄÜĞèÒªµ÷Õû
+	msgAmntOffset = msgAmnt *14;//å¦‚æœç§»åŠ¨äº†é”®ç›˜ï¼Œè¿™é‡Œå¯èƒ½éœ€è¦è°ƒæ•´
 	MoreGainMsgsOffset = msgAmnt;	
 	MoreGainMsgsFadeOffset = 15000;	
 	MoreGainMsgsFade1Offset = 255 * 4 / 3;	
 	SetKeyboardPosition();
-	GainItemMessage(msgAmnt, msgAmntOffset, ccMoreGainMsgs, ccMoreGainMsgsFade, ccMoreGainMsgsFade1);//²»ÒÆ¶¯¼üÅÌ¶øµ÷ÓÃ£¬½«msgAmntOffsetĞ´Îª200×óÓÒ
+	GainItemMessage(msgAmnt, msgAmntOffset, ccMoreGainMsgs, ccMoreGainMsgsFade, ccMoreGainMsgsFade1);//ä¸ç§»åŠ¨é”®ç›˜è€Œè°ƒç”¨ï¼Œå°†msgAmntOffsetå†™ä¸º200å·¦å³
 
 
 	CharacterBottomRepair();
 
-	//ÏÂ·½×¢ÊÍÄÚÈİÑéÖ¤ºÃÏñÓĞÎÊÌâ
-	//Memory::WriteInt(0x008DE850 + 1, 580);//quickslotcheckX//µ×²¿°´Å¥µÄÏà»¥×÷ÓÃ
-	//Memory::WriteInt(0x008DE896 + 1, 647);//quickslotcheckX//µ×²¿°´Å¥µÄÏà»¥×÷ÓÃ
-	//Memory::WriteInt(0x008DE82B + 1, 507);///quickslotcheckY //µ×²¿°´Å¥µÄÏà»¥×÷ÓÃ
+	//ä¸‹æ–¹æ³¨é‡Šå†…å®¹éªŒè¯å¥½åƒæœ‰é—®é¢˜
+	//Memory::WriteInt(0x008DE850 + 1, 580);//quickslotcheckX//åº•éƒ¨æŒ‰é’®çš„ç›¸äº’ä½œç”¨
+	//Memory::WriteInt(0x008DE896 + 1, 647);//quickslotcheckX//åº•éƒ¨æŒ‰é’®çš„ç›¸äº’ä½œç”¨
+	//Memory::WriteInt(0x008DE82B + 1, 507);///quickslotcheckY //åº•éƒ¨æŒ‰é’®çš„ç›¸äº’ä½œç”¨
 
-	//Memory::WriteInt(0x008DA11C + 1, m_nGameHeight - 19);//??¿ÉÄÜÊÇ¸÷ÖÖ×´Ì¬À¸UI×é¼ş
-	//Memory::WriteInt(0x008DA3D4 + 1, m_nGameHeight - 56); //exphpmp%±êÇ©
-	//Memory::WriteInt(0x008DA463 + 1, m_nGameHeight - 51); //stat-bar½¥±ä»òÀ¨ºÅ
-	//Memory::WriteInt(0x008DA4F2 + 1, m_nGameHeight - 51);//stat-bar½¥±ä»òÀ¨ºÅ
-	//Memory::WriteInt(0x008DA61B + 1, m_nGameHeight - 56);//??¿ÉÄÜÊÇ¸÷ÖÖ×´Ì¬À¸UI×é¼ş
+	//Memory::WriteInt(0x008DA11C + 1, m_nGameHeight - 19);//??å¯èƒ½æ˜¯å„ç§çŠ¶æ€æ UIç»„ä»¶
+	//Memory::WriteInt(0x008DA3D4 + 1, m_nGameHeight - 56); //exphpmp%æ ‡ç­¾
+	//Memory::WriteInt(0x008DA463 + 1, m_nGameHeight - 51); //stat-baræ¸å˜æˆ–æ‹¬å·
+	//Memory::WriteInt(0x008DA4F2 + 1, m_nGameHeight - 51);//stat-baræ¸å˜æˆ–æ‹¬å·
+	//Memory::WriteInt(0x008DA61B + 1, m_nGameHeight - 56);//??å¯èƒ½æ˜¯å„ç§çŠ¶æ€æ UIç»„ä»¶
 
-	//Memory::WriteInt(0x008DA90F + 1, m_nGameHeight - 51);//Í³¼ÆÊı×ÖµÄÀ¨ºÅ
+	//Memory::WriteInt(0x008DA90F + 1, m_nGameHeight - 51);//ç»Ÿè®¡æ•°å­—çš„æ‹¬å·
 	//Memory::WriteInt(0x008DA9C6 + 1, m_nGameHeight - 51);
 	//Memory::WriteInt(0x008DAC3F + 1, m_nGameHeight - 51);
 	//Memory::WriteInt(0x008DACF1 + 1, m_nGameHeight - 51);
 	//Memory::WriteInt(0x008DAF64 + 1, m_nGameHeight - 51);
 
-	//Memory::WriteInt(0x008DFA6F + 1, m_nGameHeight - 81);//ÁÄÌì¿òÑ¡Ôñ, dragging box size, minus plus sign, typing interac
+	//Memory::WriteInt(0x008DFA6F + 1, m_nGameHeight - 81);//èŠå¤©æ¡†é€‰æ‹©, dragging box size, minus plus sign, typing interac
 	//Memory::WriteInt(0x008DFB01 + 1, m_nGameHeight - 81);
 	//Memory::WriteInt(0x008DFBA5 + 1, m_nGameHeight - 80);
 	//Memory::WriteInt(0x008DFC10 + 1, m_nGameHeight - 85);
 
-	//Memory::WriteInt(0x008D4AFB + 1, m_nGameHeight - 91); //ÊÇÎªÁËËüÉÏÃæµÄĞ¡×¥È¡/µ÷Õû´óĞ¡À¸£¨ÎÒÏë£©£¿£¿
-	//Memory::WriteInt(0x008D4C1F + 1, m_nGameHeight - 90);//??¿ÉÄÜÊÇ¸÷ÖÖ×´Ì¬À¸UI×é¼ş
-	//Memory::WriteInt(0x008D4CDD + 1, m_nGameHeight - 20);//??¿ÉÄÜÊÇ¸÷ÖÖ×´Ì¬À¸UI×é¼ş
-	//Memory::WriteInt(0x008D4BBC + 6, m_nGameHeight - 114);//??¿ÉÄÜÊÇ¸÷ÖÖ×´Ì¬À¸UI×é¼ş
-	//Memory::WriteInt(0x008D4C47 + 1, m_nGameHeight - 87);//×îĞ¡»¯ÁÄÌì¿ò
-	//Memory::WriteInt(0x008D628B + 1, m_nGameHeight - 91); //ÓÃÓÚÎÄ±¾ÇøÓòµÄ±³¾°¡££¿£¿
-	//Memory::WriteInt(0x008D6300 + 1, m_nGameHeight - 90); //ÓÃÓÚÁÄÌìÊÒÎÄ±¾ÇøÓòµÄ¹ö¶¯Ìõ¡££¿£¿
-	//Memory::WriteInt(0x008D4B6D + 1, m_nGameHeight - 90);//ÁÄÌì¹ö¶¯Ìõ
-	//Memory::WriteInt(0x008D276A + 1, m_nGameHeight - 19);//??¿ÉÄÜÊÇ¸÷ÖÖ×´Ì¬À¸UI×é¼ş
+	//Memory::WriteInt(0x008D4AFB + 1, m_nGameHeight - 91); //æ˜¯ä¸ºäº†å®ƒä¸Šé¢çš„å°æŠ“å–/è°ƒæ•´å¤§å°æ ï¼ˆæˆ‘æƒ³ï¼‰ï¼Ÿï¼Ÿ
+	//Memory::WriteInt(0x008D4C1F + 1, m_nGameHeight - 90);//??å¯èƒ½æ˜¯å„ç§çŠ¶æ€æ UIç»„ä»¶
+	//Memory::WriteInt(0x008D4CDD + 1, m_nGameHeight - 20);//??å¯èƒ½æ˜¯å„ç§çŠ¶æ€æ UIç»„ä»¶
+	//Memory::WriteInt(0x008D4BBC + 6, m_nGameHeight - 114);//??å¯èƒ½æ˜¯å„ç§çŠ¶æ€æ UIç»„ä»¶
+	//Memory::WriteInt(0x008D4C47 + 1, m_nGameHeight - 87);//æœ€å°åŒ–èŠå¤©æ¡†
+	//Memory::WriteInt(0x008D628B + 1, m_nGameHeight - 91); //ç”¨äºæ–‡æœ¬åŒºåŸŸçš„èƒŒæ™¯ã€‚ï¼Ÿï¼Ÿ
+	//Memory::WriteInt(0x008D6300 + 1, m_nGameHeight - 90); //ç”¨äºèŠå¤©å®¤æ–‡æœ¬åŒºåŸŸçš„æ»šåŠ¨æ¡ã€‚ï¼Ÿï¼Ÿ
+	//Memory::WriteInt(0x008D4B6D + 1, m_nGameHeight - 90);//èŠå¤©æ»šåŠ¨æ¡
+	//Memory::WriteInt(0x008D276A + 1, m_nGameHeight - 19);//??å¯èƒ½æ˜¯å„ç§çŠ¶æ€æ UIç»„ä»¶
 
 	//Memory::WriteInt(0x008D7778 + 3, m_nGameHeight - 42);//???likely various status bar UI components
 	//Memory::WriteInt(0x008D7785 + 3, m_nGameHeight - 26);//??likely various status bar UI components
 	//Memory::WriteInt(0x008D783A + 3, m_nGameHeight - 41);//??likely various status bar UI components
 	//Memory::WriteInt(0x008D7847 + 3, m_nGameHeight - 26);//??likely various status bar UI components
 
-	//Memory::WriteInt(0x008D2FAE + 1, m_nGameHeight - 57); //µ×²¿4¸ö´ó°´Å¥
+	//Memory::WriteInt(0x008D2FAE + 1, m_nGameHeight - 57); //åº•éƒ¨4ä¸ªå¤§æŒ‰é’®
 	//Memory::WriteInt(0x008D3056 + 1, m_nGameHeight - 57);
 	//Memory::WriteInt(0x008D311F + 1, m_nGameHeight - 57);
-	//Memory::WriteInt(0x008D31E7 + 1, m_nGameHeight - 57);//µ×²¿4¸ö´ó°´Å¥
+	//Memory::WriteInt(0x008D31E7 + 1, m_nGameHeight - 57);//åº•éƒ¨4ä¸ªå¤§æŒ‰é’®
 
 
 
-    //ÏÖ½ğÉÌµêÒÆ¶¯ÊÓ½Ç
+    //ç°é‡‘å•†åº—ç§»åŠ¨è§†è§’
 	if (bIfMoveCashShopToCenter)
 	{
 		myHeight = (720 - 600) / 2;//cash shop fix for frame area	//recalc offsets
@@ -120,13 +121,13 @@ void Client::UpdateResolution() {
 	}
 
 
-	//ÊÓÍ¼µÄ²ÎÊı
+	//è§†å›¾çš„å‚æ•°
 	myAlwaysViewRestoreFixOffset = myHeight; 
 	CameraRepair(AlwaysViewRestoreFix);
 
 
 	//20231110
-	//¶¨Î»µÇÂ¼½çÃæ°æ±¾ºÅµÄÎ»ÖÃ
+	//å®šä½ç™»å½•ç•Œé¢ç‰ˆæœ¬å·çš„ä½ç½®
 	nTopOfsettedVerFix = 10 + myHeight;
 	nLeftOfsettedVerFix = 645 + myWidth; 
 	VersionRightTop(VersionNumberFix, true);
@@ -144,7 +145,7 @@ void Client::UpdateResolution() {
 		a1x = 0 + myWidth; 
 		a2x = -149 + myWidth; 
 		a2y = 0 + myHeight; 
-		a3 = 25; a1y = -250; //a4 = 0;	//µÇÂ¼ÃèÊö·û²ÎÊı
+		a3 = 25; a1y = -250; //a4 = 0;	//ç™»å½•æè¿°ç¬¦å‚æ•°
 		WorldSelectDlgMove2Right(a1y, ccLoginBackCanvasFix, ccLoginViewRecFix, ccLoginDescriptorFix);
 	}
 }
