@@ -1,49 +1,54 @@
 #pragma once
 #include "AddyLocations.h"
 
-/*Ö¸¶¨ÆÆ¹¦*/
+/*æŒ‡å®šç ´åŠŸ*/
 void SetDamageCap(double dDamage);
 
-/*Ö¸¶¨ÒÆËÙÉÏÏŞ*/
+/*æŒ‡å®šç§»é€Ÿä¸Šé™*/
 void SetMoveSpeedCap(int iSpeedValue);
 
-/*ÅäÖÃ·şÎñÆ÷IP*/
+/*é…ç½®æœåŠ¡å™¨IP*/
 void SetServerIP(const char* serverIP_Address);
 
 
-/*½ÇÉ«¿òĞŞ¸´£¬°üº¬Éı¼¶*/
+/*è§’è‰²æ¡†ä¿®å¤ï¼ŒåŒ…å«å‡çº§*/
 void CharacterBottomRepair();
 
-/*¼üÅÌÎ»ÖÃÒÆ¶¯*/
+/*é”®ç›˜ä½ç½®ç§»åŠ¨*/
 void SetKeyboardPosition();
 
-/*¶¥²¿¹ö¶¯ÏûÏ¢ÊÇ·ñºáÏòÈ«ÆÁ*/
+/*é¡¶éƒ¨æ»šåŠ¨æ¶ˆæ¯æ˜¯å¦æ¨ªå‘å…¨å±*/
 void TopMessageExtend();
 
-/*BOSSÑªÌõÊÇ·ñÏÔÊ¾ÔÚÖĞĞÄ£¬Ô­±¾»á½ôÌùµ½ÓÒ²àÆÁÄ»±ßÔµ*/
+/*BOSSè¡€æ¡æ˜¯å¦æ˜¾ç¤ºåœ¨ä¸­å¿ƒï¼ŒåŸæœ¬ä¼šç´§è´´åˆ°å³ä¾§å±å¹•è¾¹ç¼˜*/
 void BossBarRepair();
 
-/*È«Í¼ÌØĞ§ÏûÏ¢ÊÇ·ñÏÔÊ¾ÔÚÆÁÄ»ÖĞ¼ä*/
+/*å…¨å›¾ç‰¹æ•ˆæ¶ˆæ¯æ˜¯å¦æ˜¾ç¤ºåœ¨å±å¹•ä¸­é—´*/
 void CenterMessage();
 
-/*»ñÈ¡µÀ¾ß£¬¾­ÑéµÈµÄÏûÏ¢Î»ÖÃÊÇ·ñÏÔÊ¾ÔÚ½ôÌùÓÒÏÂ½ÇµÄ²Ëµ¥À¸ÉÏ·½*/
+/*è·å–é“å…·ï¼Œç»éªŒç­‰çš„æ¶ˆæ¯ä½ç½®æ˜¯å¦æ˜¾ç¤ºåœ¨ç´§è´´å³ä¸‹è§’çš„èœå•æ ä¸Šæ–¹*/
 void GainItemMessage();
 void GainItemMessage(int msgAmnt, int msgAmntOffset, void* ptrMoreGainMsgs, void* ptrMoreGainMsgsFade1, void* ptrMoreGainMsgsFade);
 
-/*ÊÇ·ñ½«°æ±¾ºÅÒÆ¶¯µ½ÓÒÉÏ½Ç*/
+/*æ˜¯å¦å°†ç‰ˆæœ¬å·ç§»åŠ¨åˆ°å³ä¸Šè§’*/
 void VersionRightTop(void* ptrCodeCave, bool bUsed);
 
-/*½«ÏÖ½ğÉÌµêÒÆ¶¯µ½ÆÁÄ»ÖĞĞÄ(Ô­°æWZÇë²»ÒªÊ¹ÓÃ)*/
+/*å°†ç°é‡‘å•†åº—ç§»åŠ¨åˆ°å±å¹•ä¸­å¿ƒ(åŸç‰ˆWZè¯·ä¸è¦ä½¿ç”¨)*/
 void CashShopMove2Center(void* ptrCashShopFix1, void* ptrCashShopFix2, void* ptrCashShopFix3, void* ptrCashShopFix4, void* ptrCashShopFix5, void* ptrCashShopFix6,
                          void* ptrCashShopFix7, void* ptrCashShopFix8, void* ptrCashShopFixOnOff, void* ptrCashShopFixPrev, int imyWidth);
-/*ĞŞ¸´Ïà»úÊÓ½Ç*/
+/*ä¿®å¤ç›¸æœºè§†è§’*/
 void CameraRepair(void* ptrAlwaysViewRestoreFix);
 
-/*ÒÆ¶¯µÇÂ¼½çÃæµÄ´óÇøÑ¡Ôñ¿ò*/
+/*ç§»åŠ¨ç™»å½•ç•Œé¢çš„å¤§åŒºé€‰æ‹©æ¡†*/
 void WorldSelectDlgMove2Right(int a1y, void* ptrLoginBackCanvasFix, void* ptrLoginViewRecFix, void* ptrLoginDescriptorFix);
 
-/*½«×é¶ÓÑûÇë£¬½»Ò×£¬´òÕĞºôÑûÇëµÄĞÅÏ¢ÌáÊ¾ÒÆ¶¯µ½ÁÄÌì´°¿ÚµÄËõ·Å°´Å¥´¦*/
+/*å°†ç»„é˜Ÿé‚€è¯·ï¼Œäº¤æ˜“ï¼Œæ‰“æ‹›å‘¼é‚€è¯·çš„ä¿¡æ¯æç¤ºç§»åŠ¨åˆ°èŠå¤©çª—å£çš„ç¼©æ”¾æŒ‰é’®å¤„*/
 void PartyTradeChatMove();
 
-/*¶îÍâÀ©Õ¹*/
+/*Long Keyboard*/
+void LongKeyboards(unsigned int dwArray_aDefaultQKM_0, unsigned int dwArray_Expanded, unsigned int dwArray_ptShortKeyPos, unsigned int dwArray_ptShortKeyPos_Fixed_Tooltips, unsigned int dwcooldown_Array,
+    void* CompareValidateFuncKeyMappedInfo_cave, void* sub_9FA0CB_cave, void* sDefaultQuickslotKeyMap_cave, void* DefaultQuickslotKeyMap_cave, void* Restore_Array_Expanded);
+
+
+/*é¢å¤–æ‰©å±•*/
 void ExtraHere();
