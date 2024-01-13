@@ -30,7 +30,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         std::wstring MapleStory;
         std::wstring MapleStoryEx;
 
-        MapleStory = str_path + L"MapleStory_.exe";
+        MapleStory = str_path + L"MapleStory.exe";
         MapleStoryEx = str_path + L"MapleStoryEx.dll";
 
         STARTUPINFO si = { 0x0 };
