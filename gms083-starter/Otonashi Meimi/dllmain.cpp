@@ -32,16 +32,17 @@ __stdcall
 start_work(
     LPVOID lpParam)
 {
-//     while (1)
-//         ::Sleep(1000);
-
-    ::MessageBoxW(0, 0, 0, 0);
+    while (1)
+        ::Sleep(1000);
 
     DWORD tdi = ::GetCurrentThreadId();
 
+    char ch = 'a';
+    short si = 0xCC;
+
     COutPacket out(10);
-    out.Encode1('a');
-    out.Encode2(0xCC); 
+    out.Encode1(ch);
+    out.Encode2(si);
     CClientSocket::pins()->SendPacket(&out);
      
     do 
