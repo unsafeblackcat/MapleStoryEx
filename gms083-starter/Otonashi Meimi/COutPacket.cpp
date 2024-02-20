@@ -10,7 +10,6 @@ COutPacket::COutPacket(
 	ULONG buffer_size)
 {
 	init();
-	  
 	m_COutPacket1(this, 0, buffer_size);
 }
 

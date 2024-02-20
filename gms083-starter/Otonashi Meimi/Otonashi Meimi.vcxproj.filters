@@ -14,13 +14,13 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="src">
-      <UniqueIdentifier>{b307057a-b4e7-4d66-9610-3357eedf64ab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\net">
-      <UniqueIdentifier>{e13abe19-8c8b-479b-8a06-0ec0deb808db}</UniqueIdentifier>
+      <UniqueIdentifier>{fb6cbb1e-01eb-4b9a-b747-5cc8467660d7}</UniqueIdentifier>
     </Filter>
     <Filter Include="ZXString">
-      <UniqueIdentifier>{2f413d11-2b68-4fe9-88a2-a0700ba744b0}</UniqueIdentifier>
+      <UniqueIdentifier>{d3a49848-62a5-42b3-9cc3-65400e1d76bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\net">
+      <UniqueIdentifier>{88bd3d50-2d2a-4f2a-a05f-b1c11400dc57}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +54,12 @@
     <ClInclude Include="ZXString\ZXString.h">
       <Filter>ZXString</Filter>
     </ClInclude>
+    <ClInclude Include="CMutex.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -67,6 +73,12 @@
     </ClCompile>
     <ClCompile Include="COutPacket.cpp">
       <Filter>src\net</Filter>
+    </ClCompile>
+    <ClCompile Include="CMutex.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

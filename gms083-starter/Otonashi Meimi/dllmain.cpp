@@ -24,12 +24,26 @@ DllMain(
     return TRUE;
 } 
 
+#include "COutPacket.h"
+#include "CClientSocket.h"
+
 unsigned 
 __stdcall 
 start_work(
     LPVOID lpParam)
 {
+//     while (1)
+//         ::Sleep(1000);
 
+    ::MessageBoxW(0, 0, 0, 0);
+
+    DWORD tdi = ::GetCurrentThreadId();
+
+    COutPacket out(10);
+    out.Encode1('a');
+    out.Encode2(0xCC); 
+    CClientSocket::pins()->SendPacket(&out);
+     
     do 
     {
         ::Sleep(1000);

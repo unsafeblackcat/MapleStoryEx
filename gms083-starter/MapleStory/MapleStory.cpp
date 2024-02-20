@@ -31,7 +31,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         std::wstring MapleStoryEx;
 
         MapleStory = str_path + L"MapleStory.exe";
-        MapleStoryEx = str_path + L"MapleStoryEx.dll";
+        MapleStoryEx = str_path + L"Otonashi Meimi.dll";
 
         STARTUPINFO si = { 0x0 };
         si.cb = sizeof(si);
