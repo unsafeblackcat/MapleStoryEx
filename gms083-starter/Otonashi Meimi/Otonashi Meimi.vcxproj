@@ -156,6 +156,12 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="memory.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ZXString\ZAllocAnonSelector.h" />
+    <ClInclude Include="ZXString\ZAllocBase.h" />
+    <ClInclude Include="ZXString\ZAllocEx.h" />
+    <ClInclude Include="ZXString\ZAllocStrSelector.h" />
+    <ClInclude Include="ZXString\ZFatalSection.h" />
+    <ClInclude Include="ZXString\ZXString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CClientSocket.cpp" />

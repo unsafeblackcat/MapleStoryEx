@@ -36,21 +36,21 @@ start_work(
     LPVOID lpParam)
 {
     while (1)
-		::Sleep(1000); 
+        ::Sleep(1000); 
 
 	DWORD tdi = ::GetCurrentThreadId();
 
     CSystemInfo sysi;
-    sysi.Init();
+	sysi.Init();  
+
+	ZXString<char> user("admin");
+	ZXString<char> password("admin");
 
     COutPacket loading(1);
-    if (tdi ==0)
+    if (tdi)
 	{ 
-		ZXString<char> user("admin");
-		loading.EncodeStr(user);
-
-		ZXString<char> password("admin");
-		loading.EncodeStr(password);
+		loading.EncodeStr(user); 
+		loading.EncodeStr(password); 
     }
     else
     { 
@@ -73,7 +73,7 @@ start_work(
         char name_buffer[256];
         _tagString* name = (_tagString*)name_buffer; 
 	    strcpy(name->m_str, "admin");
-        name->m_max_buffer = strlen("admin");
+        name->m_max_buffer = strlen("admin"); 
         loading.EncodeStr(name->m_str);
 
 
