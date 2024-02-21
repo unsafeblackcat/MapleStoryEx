@@ -4,7 +4,7 @@
 #include "memory.h"
 
 typedef void (__fastcall* pfunSendPacket)(CClientSocket* pthis, int dummy, const COutPacket* out_pack);
-static pfunSendPacket g_SendPacket;
+static pfunSendPacket g_SendPacket = nullptr;
 
 CClientSocket* CClientSocket::m_this = nullptr;
 CClientSocket* CClientSocket::pins()

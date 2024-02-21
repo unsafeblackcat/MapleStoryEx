@@ -7,15 +7,15 @@ typedef int(__fastcall* pfunCOutPacket_Encode1)(void* pthis, int, unsigned char 
 typedef int(__fastcall* pfunCOutPacket_Encode2)(void* pthis, int, unsigned short value);
 typedef int(__fastcall* pfunCOutPacket_Encode4)(void* pthis, int, unsigned int value);
 typedef int(__fastcall* pfunCOutPacket_EncodeBuffer)(void* pthis, int, void* pbuf, unsigned int size);
-typedef int(__fastcall* pfunCOutPacket_EncodeStr)(void* pthis, int, ZXString<char>&);
+typedef int(__fastcall* pfunCOutPacket_EncodeStr)(void* pthis, int, const char*);
  
-static pfunCOutPacket_def0 g_COutPacket0;
-static pfunCOutPacket_def1 g_COutPacket1;
-static pfunCOutPacket_Encode1 g_Encode1;
-static pfunCOutPacket_Encode2 g_Encode2;
-static pfunCOutPacket_Encode4 g_Encode4;
-static pfunCOutPacket_EncodeBuffer g_EncodeBuffer;
-static pfunCOutPacket_EncodeStr g_EncodeStr;
+static pfunCOutPacket_def0 g_COutPacket0 = nullptr;
+static pfunCOutPacket_def1 g_COutPacket1 = nullptr;
+static pfunCOutPacket_Encode1 g_Encode1 = nullptr;
+static pfunCOutPacket_Encode2 g_Encode2 = nullptr;
+static pfunCOutPacket_Encode4 g_Encode4 = nullptr;
+static pfunCOutPacket_EncodeBuffer g_EncodeBuffer = nullptr;
+static pfunCOutPacket_EncodeStr g_EncodeStr = nullptr;
  
 COutPacket::COutPacket(
 	ULONG buffer_size)
@@ -106,7 +106,7 @@ COutPacket::EncodeBuffer(
 
 int 
 COutPacket::EncodeStr(
-	ZXString<char>& str)
+	const char* str)
 {
 	return g_EncodeStr(this, 0, str);
 }

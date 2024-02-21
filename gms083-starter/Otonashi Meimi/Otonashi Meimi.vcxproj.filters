@@ -19,7 +19,13 @@
     <Filter Include="ZXString">
       <UniqueIdentifier>{d3a49848-62a5-42b3-9cc3-65400e1d76bf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\net">
+    <Filter Include="src\lib">
+      <UniqueIdentifier>{5db44564-1180-49da-a4d0-53bbd2eb07f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\interface">
+      <UniqueIdentifier>{2ab81dc0-c855-44f1-b2bc-2d793b1eaa7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\interface\net">
       <UniqueIdentifier>{88bd3d50-2d2a-4f2a-a05f-b1c11400dc57}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -31,34 +37,25 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="CClientSocket.h">
-      <Filter>src\net</Filter>
+      <Filter>src\interface\net</Filter>
     </ClInclude>
     <ClInclude Include="COutPacket.h">
-      <Filter>src\net</Filter>
+      <Filter>src\interface\net</Filter>
     </ClInclude>
-    <ClInclude Include="ZXString\ZAllocAnonSelector.h">
-      <Filter>ZXString</Filter>
-    </ClInclude>
-    <ClInclude Include="ZXString\ZAllocBase.h">
-      <Filter>ZXString</Filter>
-    </ClInclude>
-    <ClInclude Include="ZXString\ZAllocEx.h">
-      <Filter>ZXString</Filter>
-    </ClInclude>
-    <ClInclude Include="ZXString\ZAllocStrSelector.h">
-      <Filter>ZXString</Filter>
-    </ClInclude>
-    <ClInclude Include="ZXString\ZFatalSection.h">
-      <Filter>ZXString</Filter>
-    </ClInclude>
-    <ClInclude Include="ZXString\ZXString.h">
-      <Filter>ZXString</Filter>
+    <ClInclude Include="CConfig.h">
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="CMutex.h">
-      <Filter>src</Filter>
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CSystemInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CWvsApp.h">
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="memory.h">
-      <Filter>src</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,16 +66,25 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CClientSocket.cpp">
-      <Filter>src\net</Filter>
+      <Filter>src\interface\net</Filter>
     </ClCompile>
     <ClCompile Include="COutPacket.cpp">
-      <Filter>src\net</Filter>
+      <Filter>src\interface\net</Filter>
     </ClCompile>
     <ClCompile Include="CMutex.cpp">
-      <Filter>src</Filter>
+      <Filter>src\lib</Filter>
     </ClCompile>
     <ClCompile Include="memory.cpp">
-      <Filter>src</Filter>
+      <Filter>src\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="CConfig.cpp">
+      <Filter>src\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CSystemInfo.cpp">
+      <Filter>src\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CWvsApp.cpp">
+      <Filter>src\interface</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

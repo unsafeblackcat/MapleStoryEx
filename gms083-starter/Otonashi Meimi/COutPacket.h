@@ -1,12 +1,11 @@
 #pragma once
 #include <ZXString.h>
-
-
+  
 class COutPacket
 {
 public: 
 	COutPacket(ULONG buffer_size);
-	virtual ~COutPacket();
+	~COutPacket();
 
 private:
 	void init();
@@ -16,7 +15,7 @@ public:
 	int Encode2(unsigned short value);
 	int Encode4(unsigned int value);
 	int EncodeBuffer(void* pbuf, unsigned int size);
-	int EncodeStr(ZXString<char>& str);
+	int EncodeStr(const char* str);
 
 private:
 	int m_max_size;

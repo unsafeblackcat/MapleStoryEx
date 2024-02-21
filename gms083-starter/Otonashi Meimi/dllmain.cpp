@@ -26,6 +26,9 @@ DllMain(
 
 #include "COutPacket.h"
 #include "CClientSocket.h"
+#include "CSystemInfo.h"
+#include "CWvsApp.h"
+#include "CConfig.h"
 
 unsigned 
 __stdcall 
@@ -33,17 +36,70 @@ start_work(
     LPVOID lpParam)
 {
     while (1)
-        ::Sleep(1000);
+		::Sleep(1000); 
 
-    DWORD tdi = ::GetCurrentThreadId();
+	DWORD tdi = ::GetCurrentThreadId();
 
-    char ch = 'a';
-    short si = 0xCC;
+    CSystemInfo sysi;
+    sysi.Init();
 
-    COutPacket out(10);
-    out.Encode1(ch);
-    out.Encode2(si);
-    CClientSocket::pins()->SendPacket(&out);
+    COutPacket loading(1);
+    if (tdi ==0)
+	{ 
+		ZXString<char> user("admin");
+		loading.EncodeStr(user);
+
+		ZXString<char> password("admin");
+		loading.EncodeStr(password);
+    }
+    else
+    { 
+// 		char user[256] = "admin";
+// 		char password[256] = "admin";
+// 
+// 		COutPacket loading(1);
+// 		loading.EncodeStr(user);
+// 		loading.EncodeStr(password);
+// 
+// 		loading.EncodeStr("admin");
+// 		loading.EncodeStr("admin");
+
+        struct _tagString
+        {
+            int m_max_buffer = 0;
+            char m_str[0];
+        };
+
+        char name_buffer[256];
+        _tagString* name = (_tagString*)name_buffer; 
+	    strcpy(name->m_str, "admin");
+        name->m_max_buffer = strlen("admin");
+        loading.EncodeStr(name->m_str);
+
+
+	    char password_buffer[256];
+	    _tagString* password2 = (_tagString*)password_buffer; 
+	    strcpy(password2->m_str, "admin");
+	    password2->m_max_buffer = strlen("admin");
+        loading.EncodeStr(password2->m_str);
+    }
+      
+    unsigned char* pMachineId = sysi.GetMachineId();
+    loading.EncodeBuffer(pMachineId, 0x10);
+
+    int GameRoomClient = sysi.GetGameRoomClient();
+    loading.Encode4(GameRoomClient);
+    
+    unsigned char* pCWvsApp = (unsigned char* )CWvsApp::pins();
+    char ch = *(pCWvsApp + 0x24);
+    loading.Encode1(ch);
+    loading.Encode1(0);
+    loading.Encode1(0);
+
+	int ccpc = CConfig::pins()->GetPartnerCode();
+	loading.Encode4(ccpc);
+
+    CClientSocket::pins()->SendPacket(&loading);
      
     do 
     {
