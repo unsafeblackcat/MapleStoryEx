@@ -2,13 +2,12 @@
 class CSystemInfo
 {
 public:
-	CSystemInfo();
-	virtual ~CSystemInfo();
+	CSystemInfo(); 
 
 	unsigned char* Init();
 	unsigned char* GetMachineId();
 	int GetGameRoomClient(); 
 
-private:
-	char m_unknow[36];
+private: 
+	unsigned char m_unknow[36];
 };

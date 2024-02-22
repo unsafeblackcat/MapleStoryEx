@@ -1,5 +1,6 @@
 #pragma once
 #include "COutPacket.h"
+#include "CInPacket.h"
 
 class CClientSocket
 {
@@ -10,9 +11,14 @@ public:
 private:
 	CClientSocket();
 	virtual ~CClientSocket();
-
-	void init();
-
+	  
 public:
 	void SendPacket(COutPacket* out_pack);
+
+private: 
+	void init();
+
+	void hook_recv();
+
+	int ProcessPacket(CInPacket* in_pack);
 };

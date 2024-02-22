@@ -1,3 +1,4 @@
+#define WIN32_LEAN_AND_MEAN
 #include "CSystemInfo.h"
 
 typedef void (__fastcall* pfunCSystemInfo)(void* pthis, int dummy);
@@ -41,12 +42,6 @@ CSystemInfo::CSystemInfo()
 	}
 
 	g_CSystemInfo(this, 0);
-	return ;
-}
-
-CSystemInfo::~CSystemInfo()
-{
-	g_UnCSystemInfo(this, 0);
 	return ;
 }
 

@@ -16,9 +16,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{fb6cbb1e-01eb-4b9a-b747-5cc8467660d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ZXString">
-      <UniqueIdentifier>{d3a49848-62a5-42b3-9cc3-65400e1d76bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\interface">
       <UniqueIdentifier>{2ab81dc0-c855-44f1-b2bc-2d793b1eaa7f}</UniqueIdentifier>
     </Filter>
@@ -27,6 +24,9 @@
     </Filter>
     <Filter Include="lib">
       <UniqueIdentifier>{5db44564-1180-49da-a4d0-53bbd2eb07f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\interface\ZXString">
+      <UniqueIdentifier>{d3a49848-62a5-42b3-9cc3-65400e1d76bf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,22 +58,34 @@
       <Filter>src\interface</Filter>
     </ClInclude>
     <ClInclude Include="ZXString\ZAllocAnonSelector.h">
-      <Filter>ZXString</Filter>
+      <Filter>src\interface\ZXString</Filter>
     </ClInclude>
     <ClInclude Include="ZXString\ZAllocBase.h">
-      <Filter>ZXString</Filter>
+      <Filter>src\interface\ZXString</Filter>
     </ClInclude>
     <ClInclude Include="ZXString\ZAllocEx.h">
-      <Filter>ZXString</Filter>
+      <Filter>src\interface\ZXString</Filter>
     </ClInclude>
     <ClInclude Include="ZXString\ZAllocStrSelector.h">
-      <Filter>ZXString</Filter>
+      <Filter>src\interface\ZXString</Filter>
     </ClInclude>
     <ClInclude Include="ZXString\ZFatalSection.h">
-      <Filter>ZXString</Filter>
+      <Filter>src\interface\ZXString</Filter>
     </ClInclude>
     <ClInclude Include="ZXString\ZXString.h">
-      <Filter>ZXString</Filter>
+      <Filter>src\interface\ZXString</Filter>
+    </ClInclude>
+    <ClInclude Include="CFunction.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="CInPacket.h">
+      <Filter>src\interface\net</Filter>
+    </ClInclude>
+    <ClInclude Include="ZAllocEx2.h">
+      <Filter>src\interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +114,18 @@
       <Filter>src\interface</Filter>
     </ClCompile>
     <ClCompile Include="CWvsApp.cpp">
+      <Filter>src\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CFunction.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="CInPacket.cpp">
+      <Filter>src\interface\net</Filter>
+    </ClCompile>
+    <ClCompile Include="ZAllocEx2.cpp">
       <Filter>src\interface</Filter>
     </ClCompile>
   </ItemGroup>
