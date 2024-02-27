@@ -2,6 +2,7 @@
 #include "CClientSocket.h"
 #include "memory.h"
 #include "Hook.h"
+#include "CProtocol.h"
 
 typedef void (__fastcall* pfunSendPacket)(CClientSocket* pthis, int dummy, const COutPacket* out_pack);
 static pfunSendPacket g_SendPacket = nullptr;
@@ -74,11 +75,41 @@ CClientSocket::hook_recv()
 int  
 CClientSocket::ProcessPacket(
 	CInPacket* in_pack)
-{
-	CInPacket in1;
-	in1 = *in_pack;
-	 
-	int iret = g_CClientSocket_ProcessPacket(this, 0, in_pack);
+{ 
+	CInPacket in; 
+	in = *in_pack;
+	if (in.Decode2() == LOGIN_STATUS)
+	{
+		int m_login_status = in.Decode2();
+		char m_unknow = in.Decode1();
+		char m_unknow1 = in.Decode1();
+		int m_unknow2 = in.Decode4();
+		int m_account_id = in.Decode4();
+		char m_gender = in.Decode1();
+		char m_is_gm_account = in.Decode1();
+		char m_gm_level = in.Decode1();
+		char m_country_code = in.Decode1();
+
+		ZXString<char> str;
+		in.DecodeStr(&str);
+
+		char m_unknow3 = in.Decode1();
+		char m_is_ban = in.Decode1();
+
+		unsigned char	m_ban_time_stamp[8];
+		in.DecodeBuffer(m_ban_time_stamp, 8);
+
+		unsigned char	m_creation_time_stamp[8];
+		in.DecodeBuffer(m_creation_time_stamp, 8);
+
+		int m_remove_select_world_hint = in.Decode4();
+		char m_is_pin = in.Decode1();
+		char m_pin_status = in.Decode1();
+
+		int i = 0; 
+	}
 	
+
+	int iret = g_CClientSocket_ProcessPacket(this, 0, in_pack);
 	return iret;
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        

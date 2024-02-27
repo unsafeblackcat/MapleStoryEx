@@ -28,6 +28,15 @@
     <Filter Include="src\interface\ZXString">
       <UniqueIdentifier>{d3a49848-62a5-42b3-9cc3-65400e1d76bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\interface\net\protocol">
+      <UniqueIdentifier>{cd86b92b-0470-4c6b-b8fd-74959d807717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\interface\net\protocol\Server">
+      <UniqueIdentifier>{7cad954b-d3a9-413c-a77b-4a87fe83fe4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\interface\net\protocol\Client">
+      <UniqueIdentifier>{ce65ed17-7ff1-43f0-8971-88ef48560765}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -87,6 +96,15 @@
     <ClInclude Include="ZAllocEx2.h">
       <Filter>src\interface</Filter>
     </ClInclude>
+    <ClInclude Include="CServerLoginStatus.h">
+      <Filter>src\interface\net\protocol\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="CProtocol.h">
+      <Filter>src\interface\net\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="CClientLoginPassord.h">
+      <Filter>src\interface\net\protocol\Client</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -127,6 +145,15 @@
     </ClCompile>
     <ClCompile Include="ZAllocEx2.cpp">
       <Filter>src\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CServerLoginStatus.cpp">
+      <Filter>src\interface\net\protocol\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="CProtocol.cpp">
+      <Filter>src\interface\net\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="CClientLoginPassord.cpp">
+      <Filter>src\interface\net\protocol\Client</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

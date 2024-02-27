@@ -147,12 +147,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CClientLoginPassord.h" />
     <ClInclude Include="CClientSocket.h" />
     <ClInclude Include="CConfig.h" />
     <ClInclude Include="CFunction.h" />
     <ClInclude Include="CInPacket.h" />
     <ClInclude Include="CMutex.h" />
     <ClInclude Include="COutPacket.h" />
+    <ClInclude Include="CProtocol.h" />
+    <ClInclude Include="CServerLoginStatus.h" />
     <ClInclude Include="CSystemInfo.h" />
     <ClInclude Include="CWvsApp.h" />
     <ClInclude Include="framework.h" />
@@ -168,12 +171,15 @@
     <ClInclude Include="ZXString\ZXString.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CClientLoginPassord.cpp" />
     <ClCompile Include="CClientSocket.cpp" />
     <ClCompile Include="CConfig.cpp" />
     <ClCompile Include="CFunction.cpp" />
     <ClCompile Include="CInPacket.cpp" />
     <ClCompile Include="CMutex.cpp" />
     <ClCompile Include="COutPacket.cpp" />
+    <ClCompile Include="CProtocol.cpp" />
+    <ClCompile Include="CServerLoginStatus.cpp" />
     <ClCompile Include="CSystemInfo.cpp" />
     <ClCompile Include="CWvsApp.cpp" />
     <ClCompile Include="dllmain.cpp" />
