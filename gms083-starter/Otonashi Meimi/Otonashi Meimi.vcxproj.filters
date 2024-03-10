@@ -105,6 +105,9 @@
     <ClInclude Include="CClientLoginPassord.h">
       <Filter>src\interface\net\protocol\Client</Filter>
     </ClInclude>
+    <ClInclude Include="CServerLoginServerList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -154,6 +157,9 @@
     </ClCompile>
     <ClCompile Include="CClientLoginPassord.cpp">
       <Filter>src\interface\net\protocol\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="CServerLoginServerList.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

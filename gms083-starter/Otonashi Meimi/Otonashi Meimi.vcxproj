@@ -155,6 +155,7 @@
     <ClInclude Include="CMutex.h" />
     <ClInclude Include="COutPacket.h" />
     <ClInclude Include="CProtocol.h" />
+    <ClInclude Include="CServerLoginServerList.h" />
     <ClInclude Include="CServerLoginStatus.h" />
     <ClInclude Include="CSystemInfo.h" />
     <ClInclude Include="CWvsApp.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="CMutex.cpp" />
     <ClCompile Include="COutPacket.cpp" />
     <ClCompile Include="CProtocol.cpp" />
+    <ClCompile Include="CServerLoginServerList.cpp" />
     <ClCompile Include="CServerLoginStatus.cpp" />
     <ClCompile Include="CSystemInfo.cpp" />
     <ClCompile Include="CWvsApp.cpp" />
