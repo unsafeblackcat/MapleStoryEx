@@ -92,6 +92,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Build\pdb\$(platform)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -147,8 +148,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\detours;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <OutputFile>..\..\Client\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>..\..\Build\lib\$(platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <OutputFile>..\..\Build\bin\Client\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>..\..\Build\lib\$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -167,6 +168,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>..\..\Build\bin\Client\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>..\..\Build\lib\$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -885,8 +885,9 @@ __declspec(naked) void testingCodeCave4() {
 	}
 }
 
-//----
-unsigned char Array_aDefaultQKM[] = {
+
+
+char Array_aDefaultQKM[] = {
 	42, 0, 0, 0,
 	82, 0, 0, 0,
 	71, 0, 0, 0,
@@ -1089,13 +1090,16 @@ unsigned char Array_Expanded_Testing_Cooldown_fix[312] = { 0 };
 
 unsigned char cooldown_Array[124] = { 255, 255, 255, 255, 255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255,255, 255, 255, 255 };
 
-DWORD Array_aDefaultQKM_Address = (DWORD)&Array_aDefaultQKM;
-DWORD Array_mystery_Address = (DWORD)&Array_Expanded;
-DWORD Array_mystery_Address_plus = (DWORD)&Array_Expanded + 1;
-DWORD cooldown_Array_Address = (DWORD)&cooldown_Array;
-DWORD Array_Expanded_Testing_Cooldown_fix_Address = (DWORD)&Array_Expanded_Testing_Cooldown_fix;
 
-DWORD CompareValidate_Retn = 0x8DD8BD;
+
+// CODECAVES --- 
+const DWORD Array_aDefaultQKM_Address = (DWORD)&Array_aDefaultQKM;
+const DWORD Array_mystery_Address = (DWORD)&Array_Expanded;
+const DWORD Array_mystery_Address_plus = (DWORD)&Array_Expanded + 1;
+const DWORD cooldown_Array_Address = (DWORD)&cooldown_Array;
+const DWORD Array_Expanded_Testing_Cooldown_fix_Address = (DWORD)&Array_Expanded_Testing_Cooldown_fix;
+
+const DWORD CompareValidate_Retn = 0x8DD8BD;
 _declspec(naked) void CompareValidateFuncKeyMappedInfo_cave()
 {
 	_asm
@@ -1111,7 +1115,7 @@ _declspec(naked) void CompareValidateFuncKeyMappedInfo_cave()
 	}
 }
 
-DWORD sub_9FA0CB_cave_retn_1 = 0x9FA0E1;
+const DWORD sub_9FA0CB_cave_retn_1 = 0x9FA0E1;
 _declspec(naked) void sub_9FA0CB_cave()
 {
 	_asm {

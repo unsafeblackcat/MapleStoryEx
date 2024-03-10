@@ -16,4 +16,7 @@ public:
 	static bool bIfMutiClient;
 	static bool bIfLoadImgClient;
 	static bool bIfMoveCashShopToCenter;
+	static bool bVersionPosition;
+	static int iVersionPositionH;
+	static int iVersionPositionV;
 };

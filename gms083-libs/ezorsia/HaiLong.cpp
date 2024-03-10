@@ -46,29 +46,12 @@ void CharacterBottomRepair()
 }
 void SetKeyboardPosition()
 {
-	//键盘
-	//Memory::WriteInt(dwQuickSlotInitVPos + 1, 720 );//720
-	//Memory::WriteInt(dwQuickSlotInitHPos + 1, 575); //890
-	//Memory::WriteInt(dwQuickSlotVPos + 2, 720);//720
-	//Memory::WriteInt(dwQuickSlotHPos + 1, 575);//890
-
-	////Memory::WriteInt(0x008DE897, 720);
-	////Memory::WriteInt(0x008DE8AC, 575);
-	////Memory::WriteInt(0x0089b63a, 720);
-	////Memory::WriteInt(0x0089b6f8, 575);
-	////Memory::WriteInt(0x0089b797, 720);
-	////Memory::WriteInt(0x0089ba04, 575);
-
-	////屏蔽原来的窗口
-	//Memory::WriteInt(dwQuickSlotCWndVPos + 2, 720);//(600 - 720) / 2 - 427
-	//Memory::WriteInt(dwQuickSlotCWndHPos + 2, 575);//-798
-
 	Memory::WriteInt(dwQuickSlotInitVPos + 1, 721);
-	Memory::WriteInt(dwQuickSlotInitHPos + 1, 570);
+	Memory::WriteInt(dwQuickSlotInitHPos + 1, 575);
 	Memory::WriteInt(dwQuickSlotVPos + 2, 721);
-	Memory::WriteInt(dwQuickSlotHPos + 1, 570);
+	Memory::WriteInt(dwQuickSlotHPos + 1, 575);
 	Memory::WriteInt(dwQuickSlotCWndVPos + 2, (600 - 720)/2 - 562);//(600 - 720) / 2 - 427
-	Memory::WriteInt(dwQuickSlotCWndHPos + 2, -570);//-798
+	Memory::WriteInt(dwQuickSlotCWndHPos + 2, -575);//-798
 }
 
 void TopMessageExtend()
@@ -527,4 +510,12 @@ void SuperTubi()
 {
 	//修复宠物拣取时人物会卡顿的bug
 	Memory::FillBytes(0x00485C32, 0x90, 2);
+}
+
+void SetFont()
+{
+	Memory::WriteByte(0x008DD05A + 2, 0x04);
+	Memory::WriteByte(0x008DC1F9, 0x04);
+	Memory::WriteByte(0x008DD067 + 2, 0x01);
+	Memory::WriteByte(0x008DC203, 0x01);
 }

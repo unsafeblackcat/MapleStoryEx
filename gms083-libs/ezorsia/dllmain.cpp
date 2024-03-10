@@ -21,13 +21,16 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 
 		INIReader reader("config.ini");
 		if (reader.ParseError() == 0) {
-			Client::MsgAmount = reader.GetInteger("Hamburgers", "MsgAmount", 26);
+			Client::MsgAmount = reader.GetInteger("Hamburgers", "MsgAmount", 10);
 			Client::setDamageCap = reader.GetReal("Hamburgers", "setDamageCap", 199999.0);
-			Client::speedMovementCap = reader.GetInteger("Hamburgers", "speedMovementCap", 140);
+			Client::speedMovementCap = reader.GetInteger("Hamburgers", "speedMovementCap", 160);
 			Client::ServerIP_AddressFromINI = reader.Get("Hamburgers", "ServerIP_Address", "127.0.0.1");
 			Client::bIfMutiClient = reader.GetBoolean("Hamburgers", "MutiClient", false);
 			Client::bIfLoadImgClient = reader.GetBoolean("Hamburgers", "LoadImgClient", true);
 			Client::bIfMoveCashShopToCenter = reader.GetBoolean("Hamburgers", "IfMoveCashShopToCenter", true);
+			Client::bVersionPosition = reader.GetBoolean("Hamburgers", "IfVersionPosition", true);
+			Client::iVersionPositionH = reader.GetInteger("Hamburgers", "VersionPositionH", 645);
+			Client::iVersionPositionV = reader.GetInteger("Hamburgers", "VersionPositionV", 10);
 		}
 
 		//¶à¿ª
