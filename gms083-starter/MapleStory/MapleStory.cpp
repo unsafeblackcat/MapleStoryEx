@@ -31,19 +31,19 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         std::wstring MapleStoryEx;
 
         MapleStory = str_path + L"MapleStory.exe";
-        MapleStoryEx = str_path + L"Otonashi Meimi.dll";
+        MapleStoryEx = str_path + L"MapleStoryEx.dll";
 
         STARTUPINFO si = { 0x0 };
         si.cb = sizeof(si);
         PROCESS_INFORMATION pi = {0x0};
-         
+          
         BOOL bret = CreateProcessW(
             MapleStory.c_str()
             , L""
             , NULL
             , NULL
             , FALSE
-            , CREATE_NEW_CONSOLE
+            , CREATE_NEW_CONSOLE | CREATE_SUSPENDED
             , NULL
             , NULL
             , &si
@@ -101,6 +101,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 MessageBoxW(0, err.c_str(), L"MapleStory.exe", 0);
             }
 
+            ResumeThread(pi.hThread);
             CloseHandle(pi.hProcess);
         }
         else
