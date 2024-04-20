@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f44555a2-3c41-4d67-99e3-60e66680a580}</ProjectGuid>
-    <RootNamespace>Otonashi Meimi</RootNamespace>
+    <ProjectGuid>{f3ab2d29-05fa-45c1-9ee2-d9028df59043}</ProjectGuid>
+    <RootNamespace>fixbugsound</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -74,7 +74,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;Otonashi Meimi_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;FIXBUGSOUND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -91,13 +91,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;Otonashi Meimi_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;FIXBUGSOUND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>..\community\Detours\include;.\ZXString</AdditionalIncludeDirectories>
-      <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>..\MapleStoryEx\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -105,18 +103,15 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>..\Release</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>MapleStoryEx.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent>
-      <Command>copy "$(LocalDebuggerCommand)" G:\MapleStory</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;Otonashi Meimi_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;FIXBUGSOUND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -133,7 +128,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;Otonashi Meimi_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;FIXBUGSOUND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -147,55 +142,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CClientLoginPassord.h" />
-    <ClInclude Include="CClientSocket.h" />
-    <ClInclude Include="CConfig.h" />
-    <ClInclude Include="CFunction.h" />
-    <ClInclude Include="CInPacket.h" />
-    <ClInclude Include="Clogin.h" />
-    <ClInclude Include="CMutex.h" />
-    <ClInclude Include="COutPacket.h" />
-    <ClInclude Include="CProtocol.h" />
-    <ClInclude Include="CServerLoginServerList.h" />
-    <ClInclude Include="CServerLoginStatus.h" />
-    <ClInclude Include="CSystemInfo.h" />
-    <ClInclude Include="CWvsApp.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="Hook.h" />
-    <ClInclude Include="memory.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="ZAllocEx2.h" />
-    <ClInclude Include="ZXString\ZAllocAnonSelector.h" />
-    <ClInclude Include="ZXString\ZAllocBase.h" />
-    <ClInclude Include="ZXString\ZAllocEx.h" />
-    <ClInclude Include="ZXString\ZAllocStrSelector.h" />
-    <ClInclude Include="ZXString\ZFatalSection.h" />
-    <ClInclude Include="ZXString\ZXString.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CClientLoginPassord.cpp" />
-    <ClCompile Include="CClientSocket.cpp" />
-    <ClCompile Include="CConfig.cpp" />
-    <ClCompile Include="CFunction.cpp" />
-    <ClCompile Include="CInPacket.cpp" />
-    <ClCompile Include="Clogin.cpp" />
-    <ClCompile Include="CMutex.cpp" />
-    <ClCompile Include="COutPacket.cpp" />
-    <ClCompile Include="CProtocol.cpp" />
-    <ClCompile Include="CServerLoginServerList.cpp" />
-    <ClCompile Include="CServerLoginStatus.cpp" />
-    <ClCompile Include="CSystemInfo.cpp" />
-    <ClCompile Include="CWvsApp.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Hook.cpp" />
-    <ClCompile Include="memory.cpp" />
     <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="ZAllocEx2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

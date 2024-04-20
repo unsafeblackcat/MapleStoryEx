@@ -37,6 +37,9 @@
     <Filter Include="src\interface\net\protocol\Client">
       <UniqueIdentifier>{ce65ed17-7ff1-43f0-8971-88ef48560765}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\interface\login">
+      <UniqueIdentifier>{949629a3-1d3f-4fb9-84aa-b19e7174316e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -106,7 +109,10 @@
       <Filter>src\interface\net\protocol\Client</Filter>
     </ClInclude>
     <ClInclude Include="CServerLoginServerList.h">
-      <Filter>头文件</Filter>
+      <Filter>src\interface\net\protocol\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Clogin.h">
+      <Filter>src\interface\login</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +165,10 @@
       <Filter>src\interface\net\protocol\Client</Filter>
     </ClCompile>
     <ClCompile Include="CServerLoginServerList.cpp">
-      <Filter>源文件</Filter>
+      <Filter>src\interface\net\protocol\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="Clogin.cpp">
+      <Filter>src\interface\login</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
