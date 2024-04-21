@@ -18,15 +18,22 @@ D:.
 └───MapleStoryEx    用于后续注入和修改功能的注入插件 
 ~~~
  
-## MapleStory
+## 冒险岛.exe
 新的启动器程序，功能为拉起原始MapleStory.exe启动游戏后将MapleStoryEx.dll注入到MapleStor.exe游戏本体。
 
 ## fixbug
 > 1. gms083-starter\Release\fixbug_msexcr.dll:              因配置文件导致客户端启动崩溃      
-> 1. gms083-starter\Release\fixbug_sound.dll:               缺失技能释放音频导致崩溃      
-> 1. gms083-starter\Release\fixbug_textinputframework.dll:  启动时因为输入焦点CoreMessaging.dll崩溃   
-> 1. gms083-starter\Release\fixbug_screen_refresh_rate.dll: 客户端游戏无法在屏幕刷新率60HZ+显示器启动
+> 2. gms083-starter\Release\fixbug_sound.dll:               缺失技能释放音频导致崩溃      
+> 3. gms083-starter\Release\fixbug_textinputframework.dll:  启动时因为输入焦点CoreMessaging.dll崩溃   
+> 4. gms083-starter\Release\fixbug_screen_refresh_rate.dll: 客户端游戏无法在屏幕刷新率60HZ+显示器启动
 
+## 插件使用
+> 1. 将冒险岛.exe和MapleStoryEx.dll放到游戏客户端目录下   
+> 2. 在客户端目录下创建文件夹/plugins
+![1](gms083-starter/image/1.png)   
+> 3. 将fixbug_xxx.dll放到/plugins文件中
+![2](gms083-starter/image/2.png)    
+> 4. 启动冒险岛.exe进行游戏娱乐
 
 # gms083-libs介绍
 ### VS开发环境介绍
