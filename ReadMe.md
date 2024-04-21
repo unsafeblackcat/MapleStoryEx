@@ -25,7 +25,7 @@ D:.
 > 1. gms083-starter\Release\fixbug_msexcr.dll:              因配置文件导致客户端启动崩溃      
 > 1. gms083-starter\Release\fixbug_sound.dll:               缺失技能释放音频导致崩溃      
 > 1. gms083-starter\Release\fixbug_textinputframework.dll:  启动时因为输入焦点CoreMessaging.dll崩溃   
-> 1. gms083-starter\Release\fixbug_screen_refresh_rate.dll: 客户端游戏无法在屏幕刷新率60+显示器启动
+> 1. gms083-starter\Release\fixbug_screen_refresh_rate.dll: 客户端游戏无法在屏幕刷新率60HZ+显示器启动
 
 
 # gms083-libs介绍
