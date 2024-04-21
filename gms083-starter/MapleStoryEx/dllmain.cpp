@@ -10,14 +10,10 @@
 #include "CRole.h"
 #include "CKeyboard.h"
 #include "CFunction.h"
+#include "Hook.h"
 
 unsigned __stdcall start_work(LPVOID lpParam);
-
-#include <imm.h>  
-#pragma comment (lib ,"imm32.lib") 
-HIMC g_hIMC = NULL;
-
-
+  
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
                        LPVOID lpReserved
@@ -26,7 +22,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH: 
-	{
+	{  
 		_beginthreadex(nullptr, 0, start_work, nullptr, 0, nullptr);
 		Sleep(3000);
     }
