@@ -7,7 +7,7 @@
 # 目录介绍
 - gms083-starter 客户端启动器相关
 - gms083-libs 客户端动态库相关
-- ~~gms083-client 客户端原文件~~
+ 
 
 # gms083-starter介绍
 ~~~cpp
@@ -15,66 +15,17 @@ D:.
 ├───community 	    外部三方C++开源库
 └───config		    VS配置文件
 ├───MapleStory      新的启动器
-└───MapleStoryEx    用于后续注入和修改功能的注入插件
-└───Skills          功能插件，自动定时释放技能
+└───MapleStoryEx    用于后续注入和修改功能的注入插件 
 ~~~
-
-## VS开发环境介绍
-1. 使用VS2022初始提交，避免混乱，编译工具请统一安装 VS2017 - XP(141_XP)编译，调试，和分发。
-2. 为了避免开发环境混乱请关闭下面选项
-
-
+ 
 ## MapleStory
-新的启动器程序，功能为拉起原始MapleStory.exe启动游戏后将MapleStoryEx.dll注入到MapleStory游戏本体。
+新的启动器程序，功能为拉起原始MapleStory.exe启动游戏后将MapleStoryEx.dll注入到MapleStor.exe游戏本体。
 
-需要将083cn冒险岛游戏本地中的MapleStory.exe重命名为MapleStory_.exe后再将编译后的MapleStory.exe和MapleStoryEx.dll放入083cn文件夹中。
-
-## MapleStoryEx
-注入插件，由上面的工程把当前插件注入到MapleStory.exe中。插件目的，调试，框架，支持插件，
-
-> 以支持下列功能：   
-> 简单的插件管理器    
-> 人物部分属性获取    
-> 键盘按键回调        
-> 监控玩家HP/MP/EXP     
-> 释放技能接口   
-> 自动喊话聊天接口   
-> 命令与回显接口
-
-## Skills插件
-自动释放技能插件。目的是为了减少玩家操作。专注野外打怪，不必在意是否需要手动释放职业增益技能.
-
-Skills插件依赖MapleStoryEx.dll。使用请参考MapleStoryEx::CPlugins.h文件
-
-### 使用方法:
-聊天消息窗口输入命令:
-~~~cpp
-/**
-!skills.auto.start:            开启定时自动技能释放
-!skills.auto.stop:             停止定时自动技能释放
-!skills.auto:                  配置自动技能释放
-!skills.auto.show:             显示自动技能配置
-!skills.auto.delete:[index]:   删除指定索引配置
-!skills.auto:按键,秒数,[可选项的消息]
-    按键: 需要自动释放技能的键盘按键.
-    秒数: 需要多少秒自动触发一次技能释放.
-    可选项的消息: 当自动触发技能时可以选择向世界发送一条消息.
-例子: !skills.auto:a,120,魔法盾
-设置自动释放技能，每120秒触发一次按键a上面的技能，并且向世界发送消息 \"魔法盾\"
-备注: 请使用英文输入法状态下的 逗号, 冒号
-特殊按键以对应的数字ID替换字符
-特殊按键: F1~F12 使用数字ID(112~123)
-特殊按键: ~      使用数字ID 192
-特殊按键: ATL    使用数字ID 18
-特殊按键: CTRL   使用数字ID 17
-特殊按键: Ins    使用数字ID 45
-特殊按键: Hm     使用数字ID 36
-特殊按键: Pup    使用数字ID 33
-特殊按键: Del    使用数字ID 46
-特殊按键: End    使用数字ID 35
-特殊按键: Pdn    使用数字ID 34
-**/
-~~~
+## fixbug
+> 1. gms083-starter\Release\fixbug_msexcr.dll:              因配置文件导致客户端启动崩溃      
+> 1. gms083-starter\Release\fixbug_sound.dll:               缺失技能释放音频导致崩溃      
+> 1. gms083-starter\Release\fixbug_textinputframework.dll:  启动时因为输入焦点CoreMessaging.dll崩溃   
+> 1. gms083-starter\Release\fixbug_screen_refresh_rate.dll: 客户端游戏无法在屏幕刷新率60+显示器启动
 
 
 # gms083-libs介绍
