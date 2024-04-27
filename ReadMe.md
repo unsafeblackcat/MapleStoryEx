@@ -26,6 +26,7 @@ D:.
 > 2. gms083-starter\Release\fixbug_sound.dll:               缺失技能释放音频导致崩溃      
 > 3. gms083-starter\Release\fixbug_textinputframework.dll:  启动时因为输入焦点CoreMessaging.dll崩溃   
 > 4. gms083-starter\Release\fixbug_screen_refresh_rate.dll: 客户端游戏无法在屏幕刷新率60HZ+显示器启动
+> 5. 游戏客户端目录下如果存在msvcp71.dll和msvcr71.dll两个动态库。可以直接删除或重命名
 
 ## 插件使用
 > 1. 将冒险岛.exe和MapleStoryEx.dll放到游戏客户端目录下   
