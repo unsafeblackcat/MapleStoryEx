@@ -8,9 +8,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{61d8a63a-4023-4df4-b6f7-f25dc08f0569}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\public">
-      <UniqueIdentifier>{1806da9c-34e0-4cfe-8fdc-227bc712b3f3}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -19,8 +16,8 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\community.h">
-      <Filter>src\public</Filter>
+    <ClInclude Include="mstrlib.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mstrlib.c">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
