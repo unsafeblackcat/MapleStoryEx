@@ -8,6 +8,24 @@
     <Filter Include="src">
       <UniqueIdentifier>{61d8a63a-4023-4df4-b6f7-f25dc08f0569}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ZXString">
+      <UniqueIdentifier>{29e2249a-b47e-4932-bb8e-c7dc42fe28a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{8a5c8031-5732-4d19-a766-d74681266243}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="net">
+      <UniqueIdentifier>{3ee62e4d-e0dd-457b-8d26-e2dd9d8912b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="net\protocol">
+      <UniqueIdentifier>{f9157993-179c-4c9a-bfa4-0d1c039661c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="net\protocol\Client">
+      <UniqueIdentifier>{2d93c571-98aa-401f-b5bf-7f616bce4f88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{71a17656-e7bc-4177-8da1-9634b699bfa2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -16,8 +34,56 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mstrlib.h">
-      <Filter>src</Filter>
+    <ClInclude Include="ZXString\ZAllocAnonSelector.h">
+      <Filter>ZXString</Filter>
+    </ClInclude>
+    <ClInclude Include="ZXString\ZAllocBase.h">
+      <Filter>ZXString</Filter>
+    </ClInclude>
+    <ClInclude Include="ZXString\ZAllocEx.h">
+      <Filter>ZXString</Filter>
+    </ClInclude>
+    <ClInclude Include="ZXString\ZAllocStrSelector.h">
+      <Filter>ZXString</Filter>
+    </ClInclude>
+    <ClInclude Include="ZXString\ZFatalSection.h">
+      <Filter>ZXString</Filter>
+    </ClInclude>
+    <ClInclude Include="ZXString\ZXString.h">
+      <Filter>ZXString</Filter>
+    </ClInclude>
+    <ClInclude Include="CMutex.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="CProtocol.h">
+      <Filter>net\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="CClientSocket.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="CInPacket.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="COutPacket.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="ZAllocEx2.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="CWvsApp.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CSystemInfo.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CConfig.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
+      <Filter>lib</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -27,8 +93,38 @@
     <ClCompile Include="pch.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="mstrlib.c">
-      <Filter>src</Filter>
+    <ClCompile Include="CMutex.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="CProtocol.cpp">
+      <Filter>net\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="CClientSocket.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="CInPacket.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="COutPacket.cpp">
+      <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="ZAllocEx2.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="CWvsApp.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CSystemInfo.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="CConfig.cpp">
+      <Filter>interface</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.cpp">
+      <Filter>lib</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

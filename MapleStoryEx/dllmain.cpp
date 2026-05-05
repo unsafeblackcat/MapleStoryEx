@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 #include <process.h>
+#include "CClientSocket.h"
 
 unsigned __stdcall start_work(LPVOID lpParam);
 
@@ -29,5 +30,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 
 unsigned __stdcall start_work(LPVOID lpParam)
 {
+    CClientSocket::pins();
     return 0;
 } 

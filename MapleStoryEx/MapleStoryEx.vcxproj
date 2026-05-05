@@ -103,8 +103,8 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
-      <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>.\include;..\DetoursLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;.\include;..\DetoursLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -152,19 +152,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CClientSocket.h" />
+    <ClInclude Include="CConfig.h" />
+    <ClInclude Include="CInPacket.h" />
+    <ClInclude Include="CMutex.h" />
+    <ClInclude Include="COutPacket.h" />
+    <ClInclude Include="CProtocol.h" />
+    <ClInclude Include="CSystemInfo.h" />
+    <ClInclude Include="CWvsApp.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="mstrlib.h" />
+    <ClInclude Include="Hook.h" />
+    <ClInclude Include="memory.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="ZAllocEx2.h" />
+    <ClInclude Include="ZXString\ZAllocAnonSelector.h" />
+    <ClInclude Include="ZXString\ZAllocBase.h" />
+    <ClInclude Include="ZXString\ZAllocEx.h" />
+    <ClInclude Include="ZXString\ZAllocStrSelector.h" />
+    <ClInclude Include="ZXString\ZFatalSection.h" />
+    <ClInclude Include="ZXString\ZXString.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CClientSocket.cpp" />
+    <ClCompile Include="CConfig.cpp" />
+    <ClCompile Include="CInPacket.cpp" />
+    <ClCompile Include="CMutex.cpp" />
+    <ClCompile Include="COutPacket.cpp" />
+    <ClCompile Include="CProtocol.cpp" />
+    <ClCompile Include="CSystemInfo.cpp" />
+    <ClCompile Include="CWvsApp.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="mstrlib.c" />
+    <ClCompile Include="Hook.cpp" />
+    <ClCompile Include="memory.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ZAllocEx2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
